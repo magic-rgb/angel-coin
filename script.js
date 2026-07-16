@@ -1,20 +1,26 @@
 /*==================================================
-            ANGEL COIN SCRIPT
+            ANGEL COIN JAVASCRIPT
 ==================================================*/
 
 
+// ===============================
 // Smooth Scroll
+// ===============================
+
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     link.addEventListener("click", function(e){
 
-        e.preventDefault();
-
         const target =
-        document.querySelector(this.getAttribute("href"));
+        document.querySelector(
+            this.getAttribute("href")
+        );
+
 
         if(target){
+
+            e.preventDefault();
 
             target.scrollIntoView({
 
@@ -32,28 +38,29 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-/*==================================================
-        SCROLL REVEAL ANIMATION
-==================================================*/
+
+// ===============================
+// Reveal Animation
+// ===============================
 
 
-const revealElements =
+const revealItems =
 document.querySelectorAll(
-".feature-card, .box, .stat-box, .token-card, .timeline-box, .team-card, .faq-box"
+".card, .stat-item, .about-box, .token-box, .phase-box, .team-card, .faq-item"
 );
 
 
 
 const revealObserver =
-new IntersectionObserver((entries)=>{
+new IntersectionObserver((items)=>{
 
 
-entries.forEach(entry=>{
+items.forEach(item=>{
 
 
-if(entry.isIntersecting){
+if(item.isIntersecting){
 
-entry.target.classList.add("show");
+item.target.classList.add("visible");
 
 }
 
@@ -63,90 +70,103 @@ entry.target.classList.add("show");
 
 },{
 threshold:.15
-});
-
-
-
-revealElements.forEach(el=>{
-
-el.classList.add("hidden");
-
-revealObserver.observe(el);
 
 });
 
 
 
+revealItems.forEach(item=>{
+
+item.classList.add("reveal");
+
+revealObserver.observe(item);
+
+});
 
 
 
-/*==================================================
-            NUMBER COUNTER
-==================================================*/
+
+
+
+
+// ===============================
+// Counter Animation
+// ===============================
 
 
 const counters =
-document.querySelectorAll(".stat-box h3");
+document.querySelectorAll(".stat-item strong");
 
 
-let started=false;
+let counterStarted=false;
 
 
 
-function startCounter(){
+function startCounters(){
 
 
-if(started) return;
+if(counterStarted) return;
 
 
-const stats =
+const section =
 document.querySelector(".stats");
 
 
-const position =
-stats.getBoundingClientRect().top;
+if(!section) return;
 
 
-if(position < window.innerHeight){
+
+const top =
+section.getBoundingClientRect().top;
 
 
-started=true;
+
+if(top < window.innerHeight){
+
+
+counterStarted=true;
 
 
 counters.forEach(counter=>{
 
 
-let text =
+let value =
 counter.innerText;
 
 
 let number =
-parseInt(text.replace(/\D/g,""));
+parseInt(
+value.replace(/,/g,"")
+);
+
 
 
 let suffix =
-text.replace(/[0-9,]/g,"");
+value.replace(/[0-9,]/g,"");
+
 
 
 let count=0;
 
 
 let speed =
-number / 100;
+number / 120;
 
 
 
-let update=()=>{
+function update(){
 
 
 count += speed;
+
 
 
 if(count < number){
 
 
 counter.innerText =
-Math.floor(count).toLocaleString()
+Math.floor(count)
+.toLocaleString()
 + suffix;
 
 
@@ -159,17 +179,19 @@ else{
 
 
 counter.innerText =
-number.toLocaleString()
+number
+.toLocaleString()
 + suffix;
 
 
 }
 
 
-};
+}
 
 
 update();
+
 
 
 });
@@ -184,39 +206,38 @@ update();
 
 window.addEventListener(
 "scroll",
-startCounter
+startCounters
 );
 
 
 
 
 
-/*==================================================
-            MOBILE MENU
-==================================================*/
+
+// ===============================
+// Mobile Menu
+// ===============================
 
 
-const menuBtn =
+const menu =
 document.querySelector(".menu-btn");
 
 
-const nav =
+const navigation =
 document.querySelector("nav");
 
 
 
-if(menuBtn){
+if(menu){
 
 
-menuBtn.addEventListener(
-"click",
-()=>{
+menu.onclick=function(){
 
+navigation.classList.toggle(
+"open"
+);
 
-nav.classList.toggle("active");
-
-
-});
+};
 
 
 }
@@ -225,37 +246,53 @@ nav.classList.toggle("active");
 
 
 
-/*==================================================
-            GOLD PARTICLE EFFECT
-==================================================*/
+
+// ===============================
+// Gold Floating Particles
+// ===============================
 
 
-const particles = 40;
+function createParticles(){
 
 
-for(let i=0;i<particles;i++){
+for(let i=0;i<35;i++){
 
 
-let dot =
+let particle =
 document.createElement("span");
 
 
-dot.className="particle";
+particle.className =
+"gold-particle";
 
 
-dot.style.left =
+
+particle.style.left =
 Math.random()*100+"%";
 
 
-dot.style.animationDelay =
-Math.random()*10+"s";
+
+particle.style.animationDuration =
+(5 + Math.random()*8)+"s";
 
 
-dot.style.animationDuration =
-(5+Math.random()*10)+"s";
+
+particle.style.animationDelay =
+Math.random()*5+"s";
 
 
-document.body.appendChild(dot);
+
+document.body.appendChild(
+particle
+);
+
 
 
 }
+
+
+}
+
+
+
+createParticles();
