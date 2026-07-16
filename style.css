@@ -756,10 +756,10 @@ padding:120px 0;
 
 
 .cards{
-
-display:grid;
-
-grid-template-columns:rep
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
 
         
 .card{
@@ -1204,9 +1204,14 @@ transition:.3s;
 
 }
 
-.hero-image{
+ .hero-visual img{
+    width:100%;
+    max-width:650px;
     position:relative;
+    z-index:2;
+    filter:drop-shadow(0 0 30px rgba(244,197,66,.6));
 }
+
 
 .hero-glow{
     position:absolute;
@@ -1224,20 +1229,18 @@ transition:.3s;
     0 0 100px rgba(244,197,66,.4);
 
     animation:rotateRing 25s linear infinite;
+
+    @keyframes rotateRing{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
 }
 
-@keyframes particleMove{
 
-from{
-transform:translateY(0);
-}
 
-to{
-transform:translateY(-110vh);
-opacity:0;
-}
-
-}
 
 
     /* ========================= */
@@ -1317,8 +1320,6 @@ nav ul{
 }
 
         
-
-}
 
 nav a{
 
