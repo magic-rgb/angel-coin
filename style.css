@@ -349,12 +349,25 @@ text-decoration:none;
 }
 
 
-.gold-button:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 45px rgba(244,197,66,.45);
+.outline-button{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:18px 38px;
+
+border:1px solid rgba(255,255,255,.18);
+
+border-radius:12px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.35s;
+
 }
-
-
 
 .outline-button:hover{
 
@@ -894,14 +907,6 @@ box-shadow:
 }
 
 
-
-.team-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
 /*==================================================
             JAVASCRIPT EFFECTS
 ==================================================*/
@@ -986,7 +991,18 @@ transition:.35s;
     transform:translateY(-4px);
     box-shadow:0 0 40px rgba(244,197,66,.7);
 }
-        
+
+@keyframes particleMove{
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:1;
+    }
+}
 /*==================================================
                 COMMUNITY
 ==================================================*/
@@ -1178,14 +1194,6 @@ border-color:#f4c542;
 }
 
 
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
 .logo img{
 
 width:60px;
@@ -1238,20 +1246,26 @@ transition:.3s;
 
 
 nav a:hover{
-    color:#f4c542;
+  color:#f4c542;
+        
+nav a{
+
+position:relative;
+text-decoration:none;
+
 }
 
 nav a::after{
-    content:"";
-    position:absolute;
-position:relative;
-text-decoration:none;
-    left:0;
-    bottom:-8px;
-    width:0;
-    height:2px;
-    background:#f4c542;
-    transition:.3s;
+
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:0;
+height:2px;
+background:#f4c542;
+transition:.3s;
+        
 }
 
 nav a:hover::after{
@@ -1526,7 +1540,7 @@ font-size:34px;
                 RESPONSIVE
 ==================================================*/
 
-@media (max-width:1100px){
+@media (max-width:700px){
 
 .header{
     width:95%;
@@ -1570,18 +1584,6 @@ line-height:.95;
 letter-spacing:-4px;
 
 margin-bottom:20px;
-
-}
-
-.hero h2{
-
-font-size:30px;
-
-font-weight:600;
-
-margin-bottom:25px;
-
-color:white;
 
 }
         
@@ -2196,7 +2198,7 @@ border-bottom:none;
     padding:35px 25px;
 
 }
-
+}
 
                       
 
