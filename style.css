@@ -364,7 +364,6 @@ justify-content:center;
     filter:
     drop-shadow(0 0 40px rgba(244,197,66,.8))
     drop-shadow(0 0 80px rgba(244,197,66,.35));
-animation:float 5s ease-in-out infinite;
 
 }
 
@@ -721,9 +720,8 @@ padding:120px 0;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
+        
+    grid-template-columns:1fr;
 }
 
         
@@ -977,36 +975,29 @@ translateY(0);
 
 
 .gold-particle{
-  
-position:fixed;
+        
+    position:fixed;
+    bottom:-20px;
+    width:5px;
+    height:5px;
+    background:#f4c542;
+    border-radius:50%;
+    opacity:.5;
+    z-index:-1;
+    animation:particleMove linear infinite;
+}
 
-bottom:-20px;
-
-width:5px;
-
-height:5px;
-
-background:#f4c542;
-
-border-radius:50%;
-
-opacity:.5;
-
-z-index:-1;
-
-animation:
-particleMove linear infinite;
-
-transition:.3s;
-box-shadow:0 0 20px rgba(244,197,66,.35);
-
+.gold-button{
+    background:linear-gradient(135deg,#f4c542,#d99b00);
+    color:#111;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(244,197,66,.35);
 }
 
 .gold-button:hover{
     transform:translateY(-4px);
     box-shadow:0 0 40px rgba(244,197,66,.7);
 }
-
 @keyframes particleMove{
 
 
