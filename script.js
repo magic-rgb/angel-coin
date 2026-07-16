@@ -1,9 +1,9 @@
-/* =================================
-   ANGEL COIN PREMIUM JAVASCRIPT
-================================= */
+/*==================================================
+            ANGEL COIN SCRIPT
+==================================================*/
 
 
-// Smooth scrolling
+// Smooth Scroll
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -11,12 +11,18 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
         e.preventDefault();
 
-        document.querySelector(this.getAttribute("href"))
-        .scrollIntoView({
+        const target =
+        document.querySelector(this.getAttribute("href"));
 
-            behavior:"smooth"
+        if(target){
 
-        });
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
 
     });
 
@@ -26,22 +32,28 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-// Reveal animation when scrolling
-
-const sections = document.querySelectorAll("section");
-
-
-const observer = new IntersectionObserver(entries => {
+/*==================================================
+        SCROLL REVEAL ANIMATION
+==================================================*/
 
 
-entries.forEach(entry => {
+const revealElements =
+document.querySelectorAll(
+".feature-card, .box, .stat-box, .token-card, .timeline-box, .team-card, .faq-box"
+);
+
+
+
+const revealObserver =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
 
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
-
+entry.target.classList.add("show");
 
 }
 
@@ -49,25 +61,17 @@ entry.target.style.transform="translateY(0)";
 });
 
 
-},
-{
-threshold:0.15
+},{
+threshold:.15
 });
 
 
 
-sections.forEach(section=>{
+revealElements.forEach(el=>{
 
+el.classList.add("hidden");
 
-section.style.opacity="0";
-
-section.style.transform="translateY(50px)";
-
-section.style.transition="1s";
-
-
-observer.observe(section);
-
+revealObserver.observe(el);
 
 });
 
@@ -76,79 +80,182 @@ observer.observe(section);
 
 
 
-// Create floating light particles
+/*==================================================
+            NUMBER COUNTER
+==================================================*/
 
 
-const particleContainer=document.createElement("div");
-
-particleContainer.className="particles";
-
-
-document.body.appendChild(particleContainer);
+const counters =
+document.querySelectorAll(".stat-box h3");
 
 
-
-for(let i=0;i<80;i++){
-
-
-let particle=document.createElement("span");
-
-
-particle.className="particle";
-
-
-particle.style.left=Math.random()*100+"%";
-
-
-particle.style.animationDuration=
-(5+Math.random()*10)+"s";
-
-
-particle.style.animationDelay=
-Math.random()*5+"s";
-
-
-particleContainer.appendChild(particle);
-
-
-}
+let started=false;
 
 
 
+function startCounter(){
 
 
+if(started) return;
 
 
-// Token counter animation
+const stats =
+document.querySelector(".stats");
 
 
-const counters=document.querySelectorAll(".card p");
+const position =
+stats.getBoundingClientRect().top;
+
+
+if(position < window.innerHeight){
+
+
+started=true;
 
 
 counters.forEach(counter=>{
 
 
-counter.addEventListener("mouseenter",()=>{
+let text =
+counter.innerText;
 
 
-counter.style.color="#ffd86b";
+let number =
+parseInt(text.replace(/\D/g,""));
 
-counter.style.textShadow=
-"0 0 20px #ffd86b";
+
+let suffix =
+text.replace(/[0-9,]/g,"");
+
+
+let count=0;
+
+
+let speed =
+number / 100;
+
+
+
+let update=()=>{
+
+
+count += speed;
+
+
+if(count < number){
+
+
+counter.innerText =
+Math.floor(count).toLocaleString()
++ suffix;
+
+
+requestAnimationFrame(update);
+
+
+}
+
+else{
+
+
+counter.innerText =
+number.toLocaleString()
++ suffix;
+
+
+}
+
+
+};
+
+
+update();
 
 
 });
 
 
-counter.addEventListener("mouseleave",()=>{
+}
 
 
-counter.style.color="white";
+}
 
-counter.style.textShadow="none";
+
+
+window.addEventListener(
+"scroll",
+startCounter
+);
+
+
+
+
+
+/*==================================================
+            MOBILE MENU
+==================================================*/
+
+
+const menuBtn =
+document.querySelector(".menu-btn");
+
+
+const nav =
+document.querySelector("nav");
+
+
+
+if(menuBtn){
+
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+
+nav.classList.toggle("active");
 
 
 });
 
 
-});
+}
+
+
+
+
+
+/*==================================================
+            GOLD PARTICLE EFFECT
+==================================================*/
+
+
+const particles = 40;
+
+
+for(let i=0;i<particles;i++){
+
+
+let dot =
+document.createElement("span");
+
+
+dot.className="particle";
+
+
+dot.style.left =
+Math.random()*100+"%";
+
+
+dot.style.animationDelay =
+Math.random()*10+"s";
+
+
+dot.style.animationDuration =
+(5+Math.random()*10)+"s";
+
+
+document.body.appendChild(dot);
+
+
+}
