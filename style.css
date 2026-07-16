@@ -2059,38 +2059,6 @@ border-bottom:none;
 
 /*================ RESPONSIVE ================*/
 
-@media(max-width:900px){
-
-.roadmap::before{
-
-left:20px;
-
-}
-
-.roadmap-item{
-
-width:100%;
-
-left:0!important;
-
-padding-left:70px;
-
-padding-right:0;
-
-text-align:left;
-
-}
-
-.left .roadmap-dot,
-.right .roadmap-dot{
-
-left:9px;
-
-right:auto;
-
-}
-
-}
 
 @media(max-width:900px){
 
@@ -2340,4 +2308,4 @@ right:auto;
 }
 
                       
-}
+
