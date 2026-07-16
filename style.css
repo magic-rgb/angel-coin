@@ -876,11 +876,10 @@ text-align:center;
 }
 
 
-
 .cards{
-
-grid-template-columns:1fr;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
 }
 
 
@@ -1055,7 +1054,7 @@ opacity:0;
 
 }
 
-
+}
         
 /*==================================================
                 COMMUNITY
@@ -1229,6 +1228,7 @@ transition:.3s;
     0 0 100px rgba(244,197,66,.4);
 
     animation:rotateRing 25s linear infinite;
+}
 
     @keyframes rotateRing{
     from{
@@ -1244,32 +1244,6 @@ transition:.3s;
 
 
     /* ========================= */
-
-.header{
-
-position:fixed;
-
-top:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:92%;
-
-z-index:999;
-
-backdrop-filter:blur(18px);
-
-background:rgba(18,22,40,.45);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:20px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.45);
-
-}
 
 
 .header .container{
@@ -1340,38 +1314,12 @@ color:#f4c542;
 }
 
 
-        .buy-btn{
-
-padding:14px 32px;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#ffe78b,
-
-#f4c542,
-
-#bf8214
-
-);
-
-border-radius:12px;
-
-font-weight:700;
-
-color:black;
-
-text-decoration:none;
-
-transition:.3s;
-
-box-shadow:
-
-0 0 20px rgba(244,197,66,.35);
-
+.buy-btn{
+    background:linear-gradient(135deg,#ffe78b,#f4c542,#bf8214);
+    color:#111;
+    padding:15px 30px;
+    border-radius:10px;
+    font-weight:700;
 }
 
 .buy-btn:hover{
