@@ -1062,5 +1062,156 @@ opacity:0;
 }
 
 
+        
+/*==================================================
+                COMMUNITY
+==================================================*/
+
+
+.community{
+
+padding:120px 0;
+
+}
+
+
+
+.community-box{
+
+text-align:center;
+
+padding:70px 30px;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+
+border:
+
+1px solid var(--border);
+
+border-radius:35px;
+
+}
+
+
+
+.community-box span{
+
+color:var(--gold);
+
+letter-spacing:2px;
+
+}
+
+
+
+.community-box h2{
+
+font-size:50px;
+
+margin:20px 0;
+
+}
+
+
+
+.community-box p{
+
+color:var(--gray);
+
+margin-bottom:40px;
+
+}
+
+
+
+.social-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+
+
+.social-buttons a{
+
+padding:15px 30px;
+
+border:1px solid var(--gold);
+
+border-radius:30px;
+
+color:white;
+
+transition:.3s;
+
+}
+
+
+
+.social-buttons i{
+
+color:var(--gold);
+
+margin-right:8px;
+
+}
+
+
+
+.social-buttons a:hover{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+
+
+
+
+/* FAQ */
+
+.faq-list{
+
+max-width:850px;
+
+margin:auto;
+
+}
+
+
+
+.faq-item{
+
+cursor:pointer;
+
+}
+
+
+
+.faq-item:hover{
+
+border-color:var(--gold);
+
+transform:translateY(-5px);
+
+transition:.3s;
+
+}
+
+
+        
+
 }
 
