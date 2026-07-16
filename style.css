@@ -83,18 +83,23 @@ margin:auto;
 
 /*================ HEADER ================*/
 
-
 .header{
     position:fixed;
-    top:20px;
+    top:15px;
     left:50%;
     transform:translateX(-50%);
-    width:92%;
-    background:rgba(18,22,40,.45);
+    width:min(1400px,95%);
+    z-index:999;
+
+    background:rgba(9,13,30,.65);
     backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+    border:1px solid rgba(244,197,66,.15);
+    border-radius:18px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.05);
 }
 
 .logo img{
@@ -1024,14 +1029,14 @@ transition:.3s;
 
     /* ========================= */
 
-
 .header .container{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    max-width:1300px;
+    justify-content:space-between;
+
+    padding:18px 35px;
+    max-width:1350px;
     margin:auto;
-    padding:15px 35px;
 }
 
        .logo{
@@ -1044,9 +1049,22 @@ gap:15px;
 
 }
 
-.logo img{
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
 
-width:55px;
+.logo img{
+    width:60px;
+}
+
+.logo h2{
+    font-size:30px;
+    color:#fff;
+    font-weight:800;
+    letter-spacing:2px;
+}
 
 }
 
@@ -1062,43 +1080,69 @@ letter-spacing:2px;
 
 }
 
-        
-
-nav ul{
-    list-style:none;
+       nav ul{
     display:flex;
     gap:35px;
-    margin:0;
-    padding:0;
+    list-style:none;
 }
 
-        
-
 nav a{
-
-text-decoration:none;
-
-color:white;
-
-font-size:17px;
-
-transition:.3s;
-
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
 }
 
 nav a:hover{
-
-color:#f4c542;
-
+    color:#f4c542;
 }
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#f4c542;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+} 
+
 
 
 .buy-btn{
-    background:linear-gradient(135deg,#ffe78b,#f4c542,#bf8214);
-    color:#111;
-    padding:15px 30px;
-    border-radius:10px;
-    font-weight:700;
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+padding:16px 34px;
+
+border-radius:10px;
+
+font-weight:700;
+
+color:#111;
+
+background:
+linear-gradient(
+180deg,
+#ffe78b,
+#f4c542,
+#cb8e00
+);
+
+box-shadow:
+0 10px 25px rgba(244,197,66,.35);
+
+transition:.35s;
+
 }
 
 .buy-btn:hover{
@@ -1106,8 +1150,9 @@ color:#f4c542;
 transform:translateY(-4px);
 
 box-shadow:
+0 20px 45px rgba(244,197,66,.55);
 
-0 0 40px rgba(244,197,66,.7);
+}
 
 }
 
