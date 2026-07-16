@@ -980,3 +980,87 @@ padding:25px;
 
 
 }
+
+/*==================================================
+            JAVASCRIPT EFFECTS
+==================================================*/
+
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(50px);
+
+transition:
+.8s ease;
+
+}
+
+
+.visible{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+
+
+
+
+/* Floating Gold Particles */
+
+
+.gold-particle{
+
+position:fixed;
+
+bottom:-20px;
+
+width:5px;
+
+height:5px;
+
+background:#f4c542;
+
+border-radius:50%;
+
+opacity:.5;
+
+z-index:-1;
+
+animation:
+particleMove linear infinite;
+
+}
+
+
+
+@keyframes particleMove{
+
+
+from{
+
+transform:
+translateY(0);
+
+}
+
+
+
+to{
+
+transform:
+translateY(-110vh);
+
+opacity:0;
+
+}
+
+
+}
+
