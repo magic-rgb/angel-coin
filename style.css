@@ -52,18 +52,23 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:Poppins,sans-serif;
-
 background:
 
-radial-gradient(circle at top,#111d3d,#030712 60%);
+radial-gradient(circle at top,
+#1d2746,
+transparent 35%),
+
+radial-gradient(circle at right,
+rgba(244,197,66,.15),
+transparent 45%),
+
+#060b18;
 
 color:white;
 
-overflow-x:hidden;
+font-family:Poppins,sans-serif;
 
 }
-
 
 
 .container{
@@ -407,11 +412,9 @@ justify-content:center;
 
 
 
-.hero-visual img{
+.hero-image img{
 
-height:100%;
-
-max-width:none;
+width:100%;
 
 position:relative;
 
@@ -419,13 +422,11 @@ z-index:2;
 
 filter:
 
-drop-shadow(
-0 40px 70px rgba(244,197,66,.45)
-);
+drop-shadow(0 0 30px rgba(244,197,66,.6))
 
-animation:
+drop-shadow(0 0 60px rgba(244,197,66,.3));
 
-float 6s infinite ease-in-out;
+animation:float 5s ease-in-out infinite;
 
 }
 
@@ -1256,6 +1257,23 @@ transform:translate(-50%,-50%) rotate(360deg);
 
 
         
+
+}
+
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
 
 }
 
