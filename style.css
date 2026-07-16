@@ -2372,3 +2372,111 @@ nav{
 }
 
 }
+
+/* ================= MOBILE ================= */
+
+@media screen and (max-width:768px){
+
+.header .container{
+    padding:12px 18px;
+}
+
+nav{
+    display:none;
+}
+
+.buy-btn{
+    padding:12px 18px;
+    font-size:14px;
+}
+
+.hero{
+    height:auto;
+    min-height:auto;
+    padding:120px 0 60px;
+}
+
+.hero-grid{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-content{
+    order:1;
+    padding:0;
+}
+
+.hero-visual{
+    order:2;
+    height:auto;
+    margin-top:30px;
+}
+
+.hero h1{
+    font-size:40px;
+    letter-spacing:-2px;
+}
+
+.hero h2{
+    font-size:20px;
+}
+
+.hero p{
+    max-width:100%;
+    font-size:15px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.gold-button,
+.outline-button{
+    width:100%;
+    max-width:280px;
+}
+
+.hero-visual img{
+    max-width:300px;
+    width:100%;
+    right:0;
+}
+
+.hero-glow{
+    width:350px;
+    height:350px;
+}
+
+.hero-features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.stats-box,
+.cards,
+.team-grid,
+.about-grid,
+.about-boxes{
+    grid-template-columns:1fr;
+}
+
+.section-title h2{
+    font-size:32px;
+}
+
+.community-box h2{
+    font-size:30px;
+}
+
+.footer-brand{
+    flex-direction:column;
+}
+
+.footer-social{
+    flex-wrap:wrap;
+}
+
+}
