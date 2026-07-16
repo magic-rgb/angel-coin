@@ -1,0 +1,1 @@
+Copy your uploaded banner image into this folder and rename it to banner.png
