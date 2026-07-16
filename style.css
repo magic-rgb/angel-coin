@@ -1263,8 +1263,6 @@ height:auto;
 
 }
 
-}
-
 .logo h2{
 
 font-size:30px;
@@ -1274,9 +1272,6 @@ font-weight:800;
 letter-spacing:2px;
 
 color:white;
-
-}
-
 
 }
 
@@ -2099,35 +2094,26 @@ right:auto;
 
 @media(max-width:900px){
 
-.roadmap{
+    .roadmap::before{
+        display:none;
+    }
 
-grid-template-columns:1fr;
+    .roadmap-item{
+        width:100%;
+        left:0 !important;
+        padding-left:70px;
+        padding-right:0;
+        text-align:left;
+    }
 
-}
-
-.roadmap::before{
-
-display:none;
-
-}
-
-.team-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.cards{
-
-grid-template-columns:1fr;
+    .left .roadmap-dot,
+    .right .roadmap-dot{
+        left:9px;
+        right:auto;
+    }
 
 }
 
-.hero-features{
-
-grid-template-columns:repeat(2,1fr);
-
-}
 
 /*==================================================
                     TEAM
