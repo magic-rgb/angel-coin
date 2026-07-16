@@ -291,7 +291,17 @@ letter-spacing:-3px;
 .hero h1 span{
 
 color:var(--gold);
+.hero h1 span{
 
+background:linear-gradient(
+180deg,
+#fff3a0,
+#f4c542,
+#d18d00 )
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
 text-shadow:
 
 0 0 30px rgba(244,197,66,.5);
@@ -1207,6 +1217,40 @@ border-color:var(--gold);
 transform:translateY(-5px);
 
 transition:.3s;
+
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    border:2px solid rgba(244,197,66,.4);
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+    0 0 40px #f4c542,
+    0 0 100px rgba(244,197,66,.4);
+
+    animation:rotateRing 25s linear infinite;
+}
+
+@keyframes rotateRing{
+
+from{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+
+to{
+transform:translate(-50%,-50%) rotate(360deg);
+}
 
 }
 
