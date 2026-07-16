@@ -1196,8 +1196,9 @@ font-weight:500;
 color:white;
 
 transition:.3s;
-
+position:relative;
 }
+
 
 
 
@@ -2123,12 +2124,13 @@ border-bottom:none;
     padding:35px 25px;
 }
 
-}
+
 
 .header{
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-{
+
+}
 
 /* ===========================
    Responsive
