@@ -1333,11 +1333,12 @@ letter-spacing:2px;
 
         nav ul{
 
-display:flex;
-
-gap:40px;
-
-list-style:none;
+    list-style:none;
+    display:flex;
+    gap:35px;
+    margin:0;
+    padding:0;
+}
 
 }
 
