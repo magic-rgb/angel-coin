@@ -294,25 +294,11 @@ letter-spacing:-3px;
 
 
 .hero h1 span{
-
-color:var(--gold);
-.hero h1 span{
-
-background:linear-gradient(
-180deg,
-#fff3a0,
-#f4c542,
-#d18d00 )
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-text-shadow:
-
-0 0 30px rgba(244,197,66,.5);
-
+    background:linear-gradient(180deg,#fff3a0,#f4c542,#d18d00);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 30px rgba(244,197,66,.5);
 }
-
 
 
 
@@ -773,32 +759,29 @@ padding:120px 0;
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:rep
 
-gap:30px;
-
+        
+.card{
+    padding:45px 30px;
+    text-align:center;
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.03)
+    );
+    border:1px solid var(--border);
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    transition:.35s;
 }
 
+.card:hover{
+    transform:translateY(-10px);
+    border-color:var(--gold);
+}
 
-
-.card{
-
-padding:45px 30px;
-
-text-align:center;
-
-background:
-
-linear-gradient(
-180deg,
-rgba(255,255,255,.08),
-rgba(255,255,255,.03)
-);
-
-border:1
-
-
-            
+         
 /*==================================================
                 RESPONSIVE
 ==================================================*/
@@ -1243,14 +1226,15 @@ transition:.3s;
     animation:rotateRing 25s linear infinite;
 }
 
-@keyframes rotateRing{
+@keyframes particleMove{
 
 from{
-transform:translate(-50%,-50%) rotate(0deg);
+transform:translateY(0);
 }
 
 to{
-transform:translate(-50%,-50%) rotate(360deg);
+transform:translateY(-110vh);
+opacity:0;
 }
 
 }
@@ -1284,22 +1268,15 @@ box-shadow:0 10px 35px rgba(0,0,0,.45);
 
 }
 
-.container{
 
-max-width:1300px;
-
-margin:auto;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:15px 35px;
-
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1300px;
+    margin:auto;
+    padding:15px 35px;
 }
-
 
        .logo{
 
@@ -1329,16 +1306,17 @@ letter-spacing:2px;
 
 }
 
+        
 
-
-        nav ul{
-
+nav ul{
     list-style:none;
     display:flex;
     gap:35px;
     margin:0;
     padding:0;
 }
+
+        
 
 }
 
