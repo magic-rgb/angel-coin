@@ -6426,4 +6426,2646 @@ font-size:48px;
 }
 
 }
+
+/* =========================================
+   GOLD PREMIUM CARDS
+   ========================================= */
+
+.feature-card{
+
+background:
+linear-gradient(
+145deg,
+rgba(244,197,66,.16),
+rgba(10,10,20,.75)
+);
+
+border:1px solid rgba(244,197,66,.65);
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.12),
+inset 0 0 25px rgba(244,197,66,.08);
+
+}
+
+
+.feature-card:hover{
+
+border-color:#ffd86b;
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.45);
+
+}
+
+
+/* آیکون ها طلایی تر */
+
+.feature-card i{
+
+color:#ffe78b;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.35),
+rgba(244,197,66,.08)
+);
+
+border:1px solid rgba(255,216,107,.7);
+
+box-shadow:
+
+0 0 20px rgba(244,197,66,.35);
+
+}
+
+
+/* کادر پایین امنیت */
+
+.trust-item{
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.18),
+rgba(255,255,255,.04)
+);
+
+border:1px solid rgba(244,197,66,.45);
+
+box-shadow:
+
+0 0 18px rgba(244,197,66,.15);
+
+}
+
+
+.trust-item i{
+
+color:#ffd86b;
+
+}
+
+
+    /* =========================================
+   PREMIUM HERO IMAGE CONTROL
+   ========================================= */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+90deg,
+rgba(3,7,18,.55) 0%,
+rgba(3,7,18,.25) 45%,
+rgba(3,7,18,.05) 100%
+);
+
+z-index:1;
+
+pointer-events:none;
+
+}
+
+
+.hero-content{
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+/* تصویر کمی بزرگ و سینمایی */
+
+.hero-image{
+
+transform:scale(1.08);
+
+filter:
+
+brightness(1.15)
+contrast(1.12)
+saturate(1.15)
+drop-shadow(0 0 50px rgba(244,197,66,.55));
+
+}
+
+
+/* متن اصلی خواناتر */
+
+.hero h2{
+
+text-shadow:
+
+0 3px 15px rgba(0,0,0,.8);
+
+}
+
+
+.hero p{
+
+text-shadow:
+
+0 2px 12px rgba(0,0,0,.9);
+
+}
+
+
+/* پس زمینه کارت ها */
+
+.feature-card h3{
+
+color:#ffe78b;
+
+}
+
+
+.feature-card p{
+
+color:#e0e3ea;
+
+}
+
+
+        /* =========================================
+   HERO PREMIUM LAYOUT FINAL
+========================================= */
+
+
+/* فاصله کلی بخش Hero */
+
+.hero-grid{
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+
+/* متن کمی پایین‌تر و ثابت */
+
+.hero-content{
+
+transform:translateY(130px);
+
+}
+
+
+/* کارت‌های ویژگی */
+
+.hero-features{
+
+display:grid;
+
+grid-template-columns:repeat(2,260px);
+
+gap:18px;
+
+margin-top:35px;
+
+}
+
+
+
+/* کارت‌ها کمی جمع‌تر و لوکس‌تر */
+
+.feature-card{
+
+min-height:110px;
+
+padding:20px;
+
+border-radius:18px;
+
+}
+
+
+/* تصویر سمت راست */
+
+.hero-visual{
+
+transform:translateY(40px);
+
+}
+
+
+
+/* حلقه‌های طلایی ظریف‌تر */
+
+.hero-ring{
+
+border-color:
+
+rgba(255,216,107,.45);
+
+}
+
+
+/* نور پشت تصویر */
+
+.hero-glow{
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,216,107,.65),
+rgba(244,197,66,.15) 40%,
+transparent 75%
+);
+
+}
+
+
+
+/* دکمه‌ها */
+
+.hero-buttons{
+
+margin-top:30px;
+
+gap:20px;
+
+}
+
+
+/* موبایل */
+
+@media(max-width:768px){
+
+.hero-content{
+
+transform:none;
+
+}
+
+
+.hero-features{
+
+grid-template-columns:1fr;
+
+}
+
+
+.hero-visual{
+
+transform:none;
+
+}
+
+
+/* =========================================
+   PREMIUM GOLD STATS SECTION
+========================================= */
+
+
+.stats-box{
+
+background:
+
+linear-gradient(
+145deg,
+rgba(15,18,30,.92),
+rgba(5,8,15,.85)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.35);
+
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.55),
+0 0 35px rgba(244,197,66,.12);
+
+}
+
+
+
+/* کارت های آمار */
+
+.stat-item{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.12),
+rgba(255,255,255,.03)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.25);
+
+
+}
+
+
+.stat-item:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 20px 55px rgba(244,197,66,.25);
+
+}
+
+
+
+/* آیکون ها */
+
+.stat-item i{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,216,107,.25),
+rgba(244,197,66,.08)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.55);
+
+
+color:#ffe78b;
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.35);
+
+}
+
+
+
+/* اعداد */
+
+.stat-item strong{
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ffd86b
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+
+
+/* عنوان ها */
+
+.stat-item span{
+
+color:#d6d9e2;
+
+}
+
+
+
+        /* =========================================
+   PREMIUM GOLD ABOUT SECTION
+========================================= */
+
+
+/* تصویر About */
+
+.about-image img{
+
+filter:
+
+brightness(1.12)
+contrast(1.1)
+saturate(1.15)
+
+drop-shadow(
+0 0 45px rgba(244,197,66,.45)
+);
+
+}
+
+
+
+/* عنوان About */
+
+.about-content h3{
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ffd86b,
+#c88a00
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+text-shadow:
+
+0 0 25px rgba(244,197,66,.3);
+
+}
+
+
+
+/* باکس های About */
+
+.about-box{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.14),
+rgba(10,10,20,.75)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.35);
+
+
+box-shadow:
+
+inset 0 0 25px rgba(244,197,66,.08),
+0 15px 40px rgba(0,0,0,.4);
+
+
+}
+
+
+
+/* Hover */
+
+.about-box:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 20px 55px rgba(244,197,66,.3);
+
+}
+
+
+
+/* آیکون های About */
+
+.about-box i{
+
+
+color:#ffe78b;
+
+
+background:
+
+rgba(244,197,66,.15);
+
+
+border:
+
+1px solid rgba(255,216,107,.55);
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.35);
+
+}
+
+
+
+/* =========================================
+   FEATURE CARDS PREMIUM
+========================================= */
+
+
+.card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.07),
+rgba(5,8,18,.85)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.3);
+
+
+}
+
+
+
+.card:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 25px 60px rgba(244,197,66,.25);
+
+}
+
+
+
+.card i{
+
+
+color:#ffd86b;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.25),
+rgba(244,197,66,.05)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.5);
+
+}
+
+
+
+.card h3{
+
+
+color:#ffe78b;
+
+}
+
+
+
+        /* =========================================
+   PREMIUM GOLD ROADMAP
+========================================= */
+
+
+.roadmap::before{
+
+background:
+
+linear-gradient(
+180deg,
+transparent,
+#f4c542,
+#ffd86b,
+transparent
+);
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.6);
+
+}
+
+
+
+/* نقطه های مسیر */
+
+.roadmap-dot{
+
+background:
+
+linear-gradient(
+135deg,
+#fff1a6,
+#f4c542,
+#b87500
+);
+
+
+box-shadow:
+
+0 0 20px #f4c542,
+0 0 45px rgba(244,197,66,.8);
+
+}
+
+
+
+/* کارت های Roadmap */
+
+.roadmap-card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.12),
+rgba(5,8,18,.85)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.35);
+
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.45),
+inset 0 0 25px rgba(244,197,66,.08);
+
+
+}
+
+
+
+/* Hover */
+
+.roadmap-card:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 25px 65px rgba(244,197,66,.3);
+
+}
+
+
+
+/* عنوان مرحله */
+
+.phase{
+
+
+background:
+
+linear-gradient(
+135deg,
+#ffd86b,
+#b87500
+);
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 20px rgba(244,197,66,.45);
+
+}
+
+
+
+/* متن لیست */
+
+.roadmap-card li{
+
+
+border-color:
+
+rgba(244,197,66,.12);
+
+
+color:#d8dce5;
+
+}
+
+
+/* =========================================
+   PREMIUM GOLD TEAM SECTION
+========================================= */
+
+
+.team-card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.12),
+rgba(5,8,18,.85)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.35);
+
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.45),
+inset 0 0 25px rgba(244,197,66,.08);
+
+}
+
+
+
+.team-card:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 25px 65px rgba(244,197,66,.3);
+
+}
+
+
+
+/* عکس اعضا */
+
+.team-image{
+
+
+border:
+
+4px solid rgba(255,216,107,.65);
+
+
+box-shadow:
+
+0 0 30px rgba(244,197,66,.4);
+
+}
+
+
+
+/* سمت و عنوان */
+
+.team-card span{
+
+
+color:#ffd86b;
+
+
+text-shadow:
+
+0 0 15px rgba(244,197,66,.4);
+
+}
+
+
+
+/* شبکه اجتماعی */
+
+.team-social a{
+
+
+border:
+
+1px solid rgba(244,197,66,.45);
+
+
+background:
+
+rgba(244,197,66,.08);
+
+
+}
+
+
+
+.team-social a:hover{
+
+
+background:#f4c542;
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 30px rgba(244,197,66,.7);
+
+}
+
+
+
+/* =========================================
+   PREMIUM GOLD COMMUNITY
+========================================= */
+
+
+.community-box{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.14),
+rgba(5,8,18,.88)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.4);
+
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.55),
+inset 0 0 40px rgba(244,197,66,.08);
+
+}
+
+
+
+/* عنوان Community */
+
+.community h2{
+
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ffd86b,
+#b87500
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+/* آمار Community */
+
+.community-stats strong{
+
+
+color:#ffd86b;
+
+
+text-shadow:
+
+0 0 25px rgba(244,197,66,.5);
+
+}
+
+
+
+/* دکمه های شبکه */
+
+.social-buttons a{
+
+
+background:
+
+rgba(244,197,66,.08);
+
+
+border:
+
+1px solid rgba(244,197,66,.4);
+
+
+}
+
+
+
+.social-buttons a:hover{
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff0a0,
+#f4c542,
+#b87500
+);
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 40px rgba(244,197,66,.7);
+
+}
+
+
+/* =========================================
+   PREMIUM GOLD FOOTER
+========================================= */
+
+
+.footer{
+
+
+background:
+
+radial-gradient(
+circle at top,
+rgba(244,197,66,.18),
+transparent 35%
+),
+#040914;
+
+
+border-top:
+
+1px solid rgba(244,197,66,.35);
+
+
+}
+
+
+
+/* لوگوی فوتر */
+
+.footer-brand img{
+
+
+filter:
+
+drop-shadow(
+0 0 30px rgba(244,197,66,.8)
+);
+
+}
+
+
+
+.footer-brand h3{
+
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ffd86b,
+#b87500
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+letter-spacing:4px;
+
+}
+
+
+
+/* متن فوتر */
+
+.footer-text{
+
+
+color:#c4c9d6;
+
+}
+
+
+
+/* آیکون های شبکه */
+
+.footer-social a{
+
+
+background:
+
+rgba(244,197,66,.08);
+
+
+border:
+
+1px solid rgba(244,197,66,.45);
+
+
+color:#fff;
+
+
+}
+
+
+
+.footer-social a:hover{
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff0a0,
+#f4c542,
+#b87500
+);
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 40px rgba(244,197,66,.75);
+
+}
+
+
+
+/* خط پایانی */
+
+.footer-bottom{
+
+
+border-color:
+
+rgba(244,197,66,.18);
+
+}
+
+
+
+.footer-bottom p{
+
+
+color:#aeb6c7;
+
+}
+
+
+/* =========================================
+   FINAL GOLD PREMIUM POLISH
+========================================= */
+
+
+/* لینک‌ها */
+
+a:hover{
+
+text-shadow:
+
+0 0 15px rgba(244,197,66,.5);
+
+}
+
+
+/* تمام خطوط طلایی */
+
+.section-title span{
+
+color:#ffd86b;
+
+text-shadow:
+
+0 0 20px rgba(244,197,66,.45);
+
+}
+
+
+
+/* تیترهای بخش‌ها */
+
+.section-title h2{
+
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ffd86b,
+#b87500
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+/* FAQ */
+
+.faq-item{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.10),
+rgba(5,8,18,.85)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.25);
+
+
+}
+
+
+
+.faq-item:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 20px 50px rgba(244,197,66,.25);
+
+}
+
+
+
+.faq-item h3{
+
+
+color:#ffe78b;
+
+}
+
+
+
+/* تمام دکمه های Outline */
+
+.outline-button{
+
+
+border:
+
+1px solid rgba(255,216,107,.65);
+
+
+color:#ffd86b;
+
+
+background:
+
+rgba(244,197,66,.08);
+
+
+}
+
+
+
+.outline-button:hover{
+
+
+background:#f4c542;
+
+
+color:#111;
+
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.7);
+
+}
+
+
+
+/* اسکرول پایین صفحه */
+
+.hero-scroll a{
+
+
+border-color:
+
+rgba(255,216,107,.6);
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.25);
+
+}
+
+
+
+/* ستاره های پس زمینه */
+
+body::before{
+
+
+opacity:.45;
+
+}
+
+
+
+/* رنگ انتخاب متن */
+
+::selection{
+
+background:#f4c542;
+
+color:#111;
+
+}
+
+
+/* =========================================
+   FINAL HERO CINEMATIC POSITION
+========================================= */
+
+
+/* ستون متن */
+
+.hero-content{
+
+max-width:650px;
+
+transform:translateY(110px);
+
+}
+
+
+
+/* متن کوچک بالا */
+
+.hero-badge{
+
+font-weight:600;
+
+letter-spacing:2px;
+
+}
+
+
+
+/* عنوان اصلی */
+
+.hero h1{
+
+margin-bottom:25px;
+
+font-size:95px;
+
+line-height:.95;
+
+}
+
+
+
+/* زیرعنوان */
+
+.hero h2{
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+}
+
+
+
+/* توضیحات */
+
+.hero p{
+
+max-width:520px;
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+
+
+/* تصویر سمت راست */
+
+.hero-visual{
+
+min-height:760px;
+
+transform:translateY(30px);
+
+}
+
+
+
+.hero-image{
+
+max-width:720px;
+
+}
+
+
+
+/* نور پشت کاراکتر */
+
+.hero-glow{
+
+width:600px;
+
+height:600px;
+
+opacity:.9;
+
+}
+
+
+
+/* کارت‌های پایین متن */
+
+.hero-features{
+
+margin-top:40px;
+
+}
+
+
+/* =========================================
+   DESKTOP LARGE
+========================================= */
+
+
+@media(min-width:1200px){
+
+.hero h1{
+
+font-size:110px;
+
+}
+
+
+.hero-content{
+
+transform:translateY(130px);
+
+}
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+
+@media(max-width:768px){
+
+.hero-content{
+
+transform:none;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.hero h2{
+
+font-size:22px;
+
+}
+
+
+.hero-image{
+
+max-width:400px;
+
+}
+
+}
+
+
+/* =========================================
+   PREMIUM GOLD HEADER
+========================================= */
+
+
+.header{
+
+background:
+
+rgba(4,8,18,.82);
+
+
+border:
+
+1px solid rgba(255,216,107,.45);
+
+
+box-shadow:
+
+0 15px 45px rgba(0,0,0,.55),
+0 0 30px rgba(244,197,66,.18);
+
+}
+
+
+
+/* لوگو */
+
+.logo img{
+
+filter:
+
+drop-shadow(
+0 0 25px rgba(244,197,66,.7)
+);
+
+}
+
+
+
+/* متن منو */
+
+nav a{
+
+color:#f2f3f6;
+
+}
+
+
+nav a:hover{
+
+color:#ffd86b;
+
+}
+
+
+
+/* خط زیر منو */
+
+nav a::after{
+
+background:
+
+linear-gradient(
+90deg,
+#ffd86b,
+#b87500
+);
+
+}
+
+
+
+/* دکمه خرید */
+
+.buy-btn{
+
+background:
+
+linear-gradient(
+135deg,
+#fff0a0,
+#f4c542,
+#b87500
+);
+
+
+border:
+
+1px solid #ffe78b;
+
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.55);
+
+}
+
+
+.buy-btn:hover{
+
+box-shadow:
+
+0 0 55px rgba(244,197,66,.9);
+
+}
+
+
+        /* =========================================
+   HERO TEXT PREMIUM STYLE
+========================================= */
+
+
+/* فاصله متن از لبه */
+
+.hero-content{
+
+padding-left:10px;
+
+}
+
+
+
+/* Badge */
+
+.hero-badge{
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.18),
+rgba(0,0,0,.35)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.65);
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.25);
+
+}
+
+
+
+/* عنوان اصلی */
+
+.hero h1{
+
+font-weight:900;
+
+letter-spacing:-3px;
+
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff 0%,
+#ffe78b 45%,
+#d18d00 100%
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+/* کلمه طلایی داخل عنوان */
+
+.hero h1 span{
+
+background:
+
+linear-gradient(
+180deg,
+#fff3b0,
+#ffd86b,
+#b87500
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+/* زیرعنوان */
+
+.hero h2{
+
+color:#f1f3f8;
+
+
+text-shadow:
+
+0 0 20px rgba(0,0,0,.8);
+
+}
+
+
+
+/* توضیح */
+
+.hero p{
+
+color:#d0d5df;
+
+}
+
+
+
+/* فاصله دکمه ها */
+
+.hero-buttons{
+
+margin-top:35px;
+
+}
+
+
+
+/* کارت های کوچک */
+
+.feature-card h3{
+
+font-size:17px;
+
+}
+
+
+
+.feature-card p{
+
+font-size:13px;
+
+}
+
+
+
+        /* =========================================
+   HERO FINAL RESPONSIVE POLISH
+========================================= */
+
+
+/* دسکتاپ بزرگ */
+
+@media(min-width:1200px){
+
+.hero-grid{
+
+grid-template-columns:
+0.95fr 1.05fr;
+
+}
+
+
+.hero-content{
+
+transform:translateY(120px);
+
+}
+
+
+.hero-visual{
+
+min-height:780px;
+
+}
+
+
+.hero-image{
+
+max-width:750px;
+
+}
+
+}
+
+
+
+/* لپ تاپ */
+
+@media(max-width:1200px){
+
+.hero h1{
+
+font-size:80px;
+
+}
+
+
+.hero-content{
+
+transform:translateY(80px);
+
+}
+
+
+.hero-image{
+
+max-width:620px;
+
+}
+
+}
+
+
+
+/* تبلت */
+
+@media(max-width:992px){
+
+.hero{
+
+padding-top:120px;
+
+}
+
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+
+.hero-content{
+
+transform:none;
+
+margin:auto;
+
+}
+
+
+.hero h1{
+
+font-size:65px;
+
+}
+
+
+.hero p{
+
+margin:auto;
+
+}
+
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+
+.hero-visual{
+
+min-height:600px;
+
+}
+
+
+.hero-image{
+
+max-width:550px;
+
+}
+
+}
+
+
+
+/* موبایل */
+
+@media(max-width:576px){
+
+.hero h1{
+
+font-size:42px;
+
+letter-spacing:-1px;
+
+}
+
+
+.hero h2{
+
+font-size:20px;
+
+}
+
+
+.hero p{
+
+font-size:14px;
+
+}
+
+
+.hero-image{
+
+max-width:360px;
+
+}
+
+
+.hero-glow{
+
+width:300px;
+
+height:300px;
+
+}
+
+
+.hero-ring-1{
+
+width:330px;
+
+height:330px;
+
+}
+
+
+.hero-ring-2{
+
+width:400px;
+
+height:400px;
+
+}
+
+}
+
+/* =========================================
+   CINEMATIC GOLD BACKGROUND EFFECT
+========================================= */
+
+
+/* نور طلایی گوشه صفحه */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+right:-250px;
+
+top:50px;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(244,197,66,.22),
+transparent 65%
+);
+
+
+filter:blur(50px);
+
+z-index:0;
+
+}
+
+
+
+/* تاریک‌تر شدن سمت متن */
+
+.hero-overlay{
+
+background:
+
+linear-gradient(
+90deg,
+rgba(3,7,18,.65),
+rgba(3,7,18,.25),
+rgba(3,7,18,.05)
+);
+
+}
+
+
+
+/* ستاره‌های پس زمینه */
+
+.hero-bg{
+
+opacity:.12;
+
+}
+
+
+
+/* حلقه طلایی اطراف تصویر */
+
+.hero-ring-1{
+
+border:
+
+1px solid rgba(255,216,107,.45);
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.25);
+
+}
+
+
+.hero-ring-2{
+
+border-color:
+
+rgba(244,197,66,.25);
+
+}
+
+
+
+/* نور زیر تصویر */
+
+.hero-visual::after{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+
+height:120px;
+
+bottom:80px;
+
+
+background:
+
+radial-gradient(
+ellipse,
+rgba(244,197,66,.35),
+transparent 70%
+);
+
+
+filter:blur(40px);
+
+}
+
+
+
+/* متن‌های طلایی کوچک */
+
+.hero h1 span,
+.hero-badge,
+.trust-item i{
+
+text-shadow:
+
+0 0 20px rgba(244,197,66,.5);
+
+}
+
+        /* =========================================
+   HERO FEATURE CARDS FINAL GOLD STYLE
+========================================= */
+
+
+.hero-features{
+
+gap:20px;
+
+}
+
+
+
+/* کارت اصلی */
+
+.feature-card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,216,107,.16),
+rgba(5,8,18,.85)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.45);
+
+
+border-radius:22px;
+
+
+backdrop-filter:blur(18px);
+
+
+box-shadow:
+
+0 15px 45px rgba(0,0,0,.45),
+inset 0 0 35px rgba(244,197,66,.08);
+
+
+transition:.4s;
+
+}
+
+
+
+/* نور حرکت روی کارت */
+
+.feature-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+
+
+transform:translateX(-120%);
+
+
+transition:.8s;
+
+}
+
+
+.feature-card:hover::after{
+
+transform:translateX(120%);
+
+}
+
+
+
+/* Hover */
+
+.feature-card:hover{
+
+
+transform:
+
+translateY(-10px);
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 25px 60px rgba(244,197,66,.3);
+
+}
+
+
+
+/* آیکون */
+
+.feature-card i{
+
+
+color:#fff0a0;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(244,197,66,.35),
+rgba(244,197,66,.08)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.7);
+
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.45);
+
+}
+
+
+
+/* عنوان کارت */
+
+.feature-card h3{
+
+
+color:#ffe78b;
+
+
+font-size:18px;
+
+
+}
+
+
+
+/* متن کارت */
+
+.feature-card p{
+
+
+color:#d4d9e3;
+
+
+}
+
+
+
+/* موبایل */
+
+@media(max-width:768px){
+
+.hero-features{
+
+grid-template-columns:1fr;
+
+}
+
+
+.feature-card{
+
+text-align:left;
+
+}
+
+}
+
+
+        /* =========================================
+   PREMIUM HERO BUTTONS
+========================================= */
+
+
+.hero-buttons a{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+/* دکمه اصلی */
+
+.gold-button{
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff2a6,
+#f4c542,
+#b87500
+);
+
+
+border:
+
+1px solid rgba(255,235,150,.9);
+
+
+color:#111;
+
+
+font-weight:800;
+
+
+box-shadow:
+
+0 0 30px rgba(244,197,66,.55),
+inset 0 1px 0 rgba(255,255,255,.6);
+
+
+}
+
+
+
+/* نور حرکت روی دکمه */
+
+.gold-button::before{
+
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:80%;
+
+height:100%;
+
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.6),
+transparent
+);
+
+
+transition:.7s;
+
+}
+
+
+
+.gold-button:hover::before{
+
+left:140%;
+
+}
+
+
+.gold-button:hover{
+
+
+transform:translateY(-6px);
+
+
+box-shadow:
+
+0 0 55px rgba(244,197,66,.85);
+
+}
+
+
+
+/* دکمه دوم */
+
+.outline-button{
+
+
+background:
+
+rgba(244,197,66,.08);
+
+
+border:
+
+1px solid rgba(255,216,107,.7);
+
+
+color:#ffd86b;
+
+
+backdrop-filter:blur(15px);
+
+
+}
+
+
+
+.outline-button:hover{
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff0a0,
+#f4c542
+);
+
+
+color:#111;
+
+
+border-color:#ffe78b;
+
+
+box-shadow:
+
+0 0 45px rgba(244,197,66,.7);
+
+}
+
+
+        /* =========================================
+   MOVE HERO TEXT DOWN
+========================================= */
+
+
+.hero-content{
+
+transform:translateY(130px);
+
+}
+
+
+/* فاصله عنوان از بالا */
+
+.hero-badge{
+
+margin-bottom:35px;
+
+}
+
+
+/* تنظیم فاصله عنوان */
+
+.hero h1{
+
+margin-bottom:25px;
+
+}
+
+
+/* متن توضیحی کمی پایین‌تر */
+
+.hero p{
+
+margin-top:10px;
+
+}
+
+
+
+/* دسکتاپ بزرگ */
+
+@media(min-width:1200px){
+
+.hero-content{
+
+transform:translateY(150px);
+
+}
+
+}
+
+
+
+/* تبلت */
+
+@media(max-width:992px){
+
+.hero-content{
+
+transform:translateY(30px);
+
+}
+
+}
+
+
+
+/* موبایل */
+
+@media(max-width:576px){
+
+.hero-content{
+
+transform:translateY(0);
+
+}
+
+}
+
+        /* =========================================
+   EXTRA GOLD PREMIUM DETAILS
+========================================= */
+
+
+/* عنوان اصلی */
+
+.hero h1{
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff 0%,
+#fff3a6 25%,
+#ffd86b 55%,
+#c78300 100%
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+filter:
+
+drop-shadow(
+0 0 15px rgba(255,216,107,.35)
+);
+
+}
+
+
+
+/* متن طلایی داخل عنوان */
+
+.hero h1 span{
+
+
+background:
+
+linear-gradient(
+180deg,
+#fff8c7,
+#ffd86b,
+#e0a000,
+#8a5200
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+}
+
+
+
+/* Badge طلایی */
+
+.hero-badge{
+
+
+color:#ffe78b;
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,216,107,.22),
+rgba(244,197,66,.05)
+);
+
+
+border:
+
+1px solid rgba(255,216,107,.75);
+
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.25),
+inset 0 0 20px rgba(255,216,107,.15);
+
+}
+
+
+
+/* کادرهای کوچک */
+
+.feature-card,
+.trust-item{
+
+
+border-color:
+
+rgba(255,216,107,.45);
+
+
+box-shadow:
+
+inset 0 0 25px rgba(244,197,66,.08),
+0 15px 40px rgba(0,0,0,.45);
+
+}
+
+
+
+/* آیکون‌ها */
+
+.feature-card i,
+.trust-item i{
+
+
+color:#ffe78b;
+
+
+text-shadow:
+
+0 0 15px rgba(255,216,107,.8);
+
+}
+
+
+
+/* خط‌های طلایی */
+
+.feature-card:hover,
+.trust-item:hover{
+
+
+border-color:#ffd86b;
+
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.35);
+
+}
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+}
         
