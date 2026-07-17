@@ -6344,3 +6344,33 @@ font-size:48px;
 
 
 }
+
+        
+/* MOVE HERO TEXT DOWN */
+.hero-content{
+    transform:translateY(160px);
+}
+
+/* فاصله بهتر بین متن‌ها */
+.hero h2{
+    margin-top:30px;
+}
+
+.hero p{
+    margin-top:10px;
+}
+
+/* دکمه ها هم همراه متن پایین بیایند */
+.hero-buttons{
+    margin-top:45px;
+}
+
+
+/* برای موبایل */
+@media(max-width:768px){
+
+.hero-content{
+    transform:translateY(80px);
+}
+
+}
