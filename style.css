@@ -1019,7 +1019,7 @@ position:relative;
 
     background:
     linear-gradient(rgba(3,7,18,.82),rgba(3,7,18,.90)),
-    url("file_6x.png") center/cover no-repeat;
+   url("./file_6x.png") center/cover no-repeat;
 
 background-size:cover;
 
