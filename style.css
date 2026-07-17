@@ -223,34 +223,22 @@ margin:auto;
 
 }
 
-
 .hero h1{
-
-font-size:105px;
-
-font-weight:900;
-
-line-height:.9;
-
-letter-spacing:-4px;
-
-text-transform:uppercase;
 
 background:linear-gradient(
 180deg,
-#ffffff 0%,
-#f7f7f7 35%,
-#f4c542 100%
+#fff4b0 0%,
+#ffd86b 35%,
+#d89a00 75%,
+#8a5200 100%
 );
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
 text-shadow:
-
-0 0 25px rgba(244,197,66,.18),
-
-0 0 60px rgba(244,197,66,.12);
+0 0 20px rgba(255,216,107,.35),
+0 0 50px rgba(244,197,66,.25);
 
 }
 
@@ -522,29 +510,22 @@ transform:rotate(0deg);
 
 .feature-card{
 
-    display:flex;
+background:
+linear-gradient(
+145deg,
+rgba(255,215,100,.15),
+rgba(10,10,20,.65)
+);
 
-    align-items:flex-start;
+border:1px solid rgba(244,197,66,.35);
 
-    gap:18px;
-
-    padding:22px;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    backdrop-filter:blur(12px);
-
-    transition:.35s;
-
-    position:relative;
-
-    overflow:hidden;
+box-shadow:
+inset 0 0 30px rgba(244,197,66,.05),
+0 15px 40px rgba(0,0,0,.45);
 
 }
+
+
 
 .feature-card::before{
 
@@ -588,29 +569,19 @@ transform:rotate(0deg);
 
 }
 
+
 .feature-card i{
 
-    width:56px;
+color:#ffd86b;
 
-    height:56px;
+background:
+rgba(244,197,66,.15);
 
-    border-radius:16px;
+border-color:
+rgba(255,216,107,.45);
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-shrink:0;
-
-    font-size:24px;
-
-    color:#f4c542;
-
-    background:rgba(244,197,66,.08);
-
-    border:1px solid rgba(244,197,66,.20);
+box-shadow:
+0 0 20px rgba(244,197,66,.25);
 
 }
 
@@ -675,6 +646,7 @@ transform:rotate(0deg);
     transition:.35s;
 
 }
+
 
 .trust-item:hover{
 
