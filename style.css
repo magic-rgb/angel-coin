@@ -9149,3 +9149,74 @@ box-shadow:
 
         
         
+/* ==========================================
+   ABOUT FIX
+========================================== */
+
+#about{
+    position:relative;
+    overflow:hidden;
+    min-height:900px;
+    background:#050913;
+}
+
+#about::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("./file_6x.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    opacity:.28;
+    z-index:0;
+}
+
+#about::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(3,7,18,.92),
+            rgba(3,7,18,.55),
+            rgba(3,7,18,.92)
+        );
+    z-index:1;
+}
+
+#about .container{
+    position:relative;
+    z-index:2;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-boxes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+    #about{
+        min-height:auto;
+    }
+
+    #about::before{
+        background-position:center;
+        opacity:.22;
+    }
+
+    .about-boxes{
+        grid-template-columns:1fr;
+    }
+
+}
