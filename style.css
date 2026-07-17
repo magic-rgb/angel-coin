@@ -9894,4 +9894,939 @@ box-shadow:
 0 0 25px rgba(244,197,66,.8);
 
 }
+
+
+
+      /*==========================
+TOKENOMICS PREMIUM
+==========================*/
+
+.tokenomics{
+
+padding:120px 8%;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.token-header{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.token-header span{
+
+color:#f4c542;
+
+letter-spacing:4px;
+
+font-size:.9rem;
+
+text-transform:uppercase;
+
+}
+
+.token-header h2{
+
+font-size:3rem;
+
+margin:18px 0;
+
+color:#fff;
+
+}
+
+.token-header p{
+
+max-width:650px;
+
+margin:auto;
+
+color:#b8bfd5;
+
+line-height:1.8;
+
+}
+
+.token-container{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:80px;
+
+flex-wrap:wrap;
+
+}
+
+.token-chart{
+
+position:relative;
+
+width:420px;
+
+height:420px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.chart{
+
+width:100%;
+
+height:100%;
+
+border-radius:50%;
+
+background:conic-gradient(
+
+#ffd86b 0% 40%,
+
+#58b5ff 40% 70%,
+
+#8b6dff 70% 90%,
+
+#2f3444 90% 100%
+
+);
+
+box-shadow:
+
+0 0 50px rgba(244,197,66,.25),
+
+0 0 100px rgba(244,197,66,.12);
+
+animation:rotateChart 20s linear infinite;
+
+}
+
+.chart::after{
+
+content:"";
+
+position:absolute;
+
+inset:70px;
+
+background:#08111f;
+
+border-radius:50%;
+
+}
+
+.chart-center{
+
+position:absolute;
+
+text-align:center;
+
+z-index:2;
+
+}
+
+.chart-center h3{
+
+color:#fff;
+
+font-size:2rem;
+
+}
+
+.chart-center p{
+
+color:#f4c542;
+
+}
+
+.token-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+}
+
+.token-card{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+width:320px;
+
+padding:22px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(244,197,66,.18);
+
+transition:.35s;
+
+}
+
+.token-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 35px rgba(244,197,66,.35);
+
+}
+
+.token-card h3{
+
+color:#fff;
+
+margin-bottom:6px;
+
+}
+
+.token-card span{
+
+color:#f4c542;
+
+font-weight:700;
+
+font-size:1.1rem;
+
+}
+
+.dot{
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+}
+
+.liquidity .dot{
+
+background:#ffd86b;
+
+}
+
+.community .dot{
+
+background:#58b5ff;
+
+}
+
+.marketing .dot{
+
+background:#8b6dff;
+
+}
+
+.reserve .dot{
+
+background:#3b4155;
+
+}
+
+@keyframes rotateChart{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tokenomics{
+
+padding:90px 20px;
+
+}
+
+.token-header h2{
+
+font-size:2.2rem;
+
+}
+
+.token-chart{
+
+width:300px;
+
+height:300px;
+
+}
+
+.chart::after{
+
+inset:50px;
+
+}
+
+.token-card{
+
+width:100%;
+
+}
+
+}
+
+
+/*==========================
+TOKENOMICS PREMIUM EFFECTS
+==========================*/
+
+.tokenomics::before{
+content:"";
+position:absolute;
+top:-250px;
+left:-250px;
+width:500px;
+height:500px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(244,197,66,.16),
+transparent 70%);
+filter:blur(20px);
+pointer-events:none;
+}
+
+.tokenomics::after{
+content:"";
+position:absolute;
+right:-220px;
+bottom:-220px;
+width:450px;
+height:450px;
+border-radius:50%;
+background:radial-gradient(circle,
+rgba(77,168,255,.14),
+transparent 70%);
+filter:blur(30px);
+pointer-events:none;
+}
+
+.token-chart::before{
+content:"";
+position:absolute;
+width:112%;
+height:112%;
+border-radius:50%;
+border:2px solid rgba(244,197,66,.18);
+animation:pulseRing 4s ease-in-out infinite;
+}
+
+.token-chart::after{
+content:"";
+position:absolute;
+width:125%;
+height:125%;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.06);
+animation:pulseRing 6s ease-in-out infinite;
+}
+
+.chart{
+position:relative;
+overflow:hidden;
+}
+
+.chart::before{
+content:"";
+position:absolute;
+inset:-40%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.25),
+transparent);
+animation:shine 5s linear infinite;
+}
+
+.chart-center{
+width:160px;
+height:160px;
+border-radius:50%;
+background:rgba(8,17,31,.95);
+border:2px solid rgba(244,197,66,.35);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:
+0 0 40px rgba(244,197,66,.25),
+inset 0 0 20px rgba(244,197,66,.15);
+}
+
+.token-card{
+position:relative;
+overflow:hidden;
+}
+
+.token-card::before{
+content:"";
+position:absolute;
+left:-100%;
+top:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.12),
+transparent);
+transition:.8s;
+}
+
+.token-card:hover::before{
+left:100%;
+}
+
+.token-card:hover{
+transform:translateY(-10px) scale(1.03);
+border-color:#f4c542;
+}
+
+.dot{
+box-shadow:0 0 15px currentColor;
+}
+
+@keyframes pulseRing{
+
+0%,100%{
+transform:scale(1);
+opacity:.5;
+}
+
+50%{
+transform:scale(1.06);
+opacity:1;
+}
+
+}
+
+@keyframes shine{
+
+0%{
+transform:rotate(0deg) translateX(-60%);
+}
+
+100%{
+transform:rotate(360deg) translateX(60%);
+}
+
+}
+
+
+/*==========================
+TOKENOMICS CONNECTORS
+==========================*/
+
+.token-container{
+    position:relative;
+}
+
+.token-list{
+    position:relative;
+}
+
+.token-list::before{
+    content:"";
+    position:absolute;
+    left:-45px;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:2px;
+    background:linear-gradient(90deg,#f4c542,transparent);
+}
+
+.token-card{
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+.token-card:nth-child(2){
+    animation-delay:.5s;
+}
+
+.token-card:nth-child(3){
+    animation-delay:1s;
+}
+
+.token-card:nth-child(4){
+    animation-delay:1.5s;
+}
+
+@keyframes floatCard{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+.chart{
+
+position:relative;
+
+}
+
+.chart::after{
+
+content:"";
+
+position:absolute;
+
+inset:18px;
+
+border-radius:50%;
+
+border:2px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 30px rgba(255,255,255,.08),
+inset 0 0 25px rgba(255,255,255,.08);
+
+}
+
+.chart:hover{
+
+transform:scale(1.04);
+
+transition:.5s;
+
+box-shadow:
+0 0 40px rgba(244,197,66,.4),
+0 0 100px rgba(244,197,66,.2);
+
+}
+
+.token-card h3{
+
+font-size:1.1rem;
+
+font-weight:700;
+
+}
+
+.token-card span{
+
+display:inline-block;
+
+margin-top:6px;
+
+font-size:1.25rem;
+
+}
+
+@media(max-width:768px){
+
+.token-list::before{
+
+display:none;
+
+}
+
+.token-container{
+
+gap:45px;
+
+}
+
+.token-chart{
+
+margin-bottom:15px;
+
+}
+
+}
+
+/*=========================================
+      TOKENOMICS PREMIUM FINAL
+=========================================*/
+
+.tokenomics{
+    background:
+    radial-gradient(circle at top,#152244 0%,transparent 40%),
+    radial-gradient(circle at bottom,#221a08 0%,transparent 35%),
+    #050b17;
+}
+
+.token-card{
+
+position:relative;
+
+border-radius:22px;
+
+overflow:hidden;
+
+transition:.45s;
+
+}
+
+.token-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:22px;
+
+padding:1px;
+
+background:linear-gradient(
+135deg,
+rgba(255,216,107,.9),
+rgba(255,255,255,.05),
+rgba(77,168,255,.5));
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.token-card:hover::after{
+
+opacity:1;
+
+}
+
+.token-card:hover{
+
+background:rgba(255,255,255,.08);
+
+box-shadow:
+
+0 0 30px rgba(244,197,66,.25),
+
+0 20px 45px rgba(0,0,0,.45);
+
+}
+
+.chart{
+
+animation:
+
+rotateChart 22s linear infinite,
+
+chartGlow 4s ease-in-out infinite;
+
+}
+
+.chart-center{
+
+animation:centerPulse 3s ease-in-out infinite;
+
+}
+
+.chart-center h3{
+
+font-size:2.2rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.chart-center p{
+
+font-size:1rem;
+
+color:#ffd86b;
+
+}
+
+.token-header h2{
+
+background:linear-gradient(
+180deg,
+#ffffff,
+#ffe78b);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.token-header p{
+
+font-size:1.05rem;
+
+}
+
+@keyframes centerPulse{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+@keyframes chartGlow{
+
+0%,100%{
+
+filter:drop-shadow(0 0 15px rgba(244,197,66,.2));
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 45px rgba(244,197,66,.55));
+
+}
+
+}
+
+@media(max-width:992px){
+
+.token-container{
+
+flex-direction:column;
+
+}
+
+.token-list{
+
+width:100%;
+
+max-width:450px;
+
+}
+
+.token-card{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.tokenomics{
+
+padding:80px 18px;
+
+}
+
+.token-header h2{
+
+font-size:2rem;
+
+line-height:1.25;
+
+}
+
+.token-header p{
+
+font-size:.95rem;
+
+}
+
+.token-chart{
+
+width:260px;
+
+height:260px;
+
+}
+
+.chart::after{
+
+inset:42px;
+
+}
+
+.chart-center{
+
+width:135px;
+
+height:135px;
+
+}
+
+.chart-center h3{
+
+font-size:1.6rem;
+
+}
+
+}
+
+
+/*==============================
+SVG TOKEN CHART
+==============================*/
+
+.token-svg{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+transform:rotate(-90deg);
+
+overflow:visible;
+
+}
+
+.track{
+
+fill:none;
+
+stroke:#162239;
+
+stroke-width:24;
+
+}
+
+.seg{
+
+fill:none;
+
+stroke-width:24;
+
+stroke-linecap:round;
+
+filter:drop-shadow(0 0 12px currentColor);
+
+animation:drawChart 2s ease forwards;
+
+}
+
+.liquidity{
+
+stroke:#ffd86b;
+
+stroke-dasharray:196 490;
+
+stroke-dashoffset:0;
+
+}
+
+.community{
+
+stroke:#4da8ff;
+
+stroke-dasharray:147 490;
+
+stroke-dashoffset:-205;
+
+}
+
+.marketing{
+
+stroke:#8c6bff;
+
+stroke-dasharray:98 490;
+
+stroke-dashoffset:-360;
+
+}
+
+.reserve{
+
+stroke:#444d65;
+
+stroke-dasharray:49 490;
+
+stroke-dashoffset:-463;
+
+}
+
+@keyframes drawChart{
+
+from{
+
+stroke-dasharray:0 490;
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+   .token-card:hover{
+
+transform:
+translateX(12px)
+scale(1.03);
+
+}
+
+.token-card:hover .dot{
+
+transform:scale(1.5);
+
+box-shadow:
+
+0 0 20px currentColor,
+
+0 0 45px currentColor;
+
+}
+
+.dot{
+
+transition:.4s;
+
+}
+
+        
+        
+        
+        
         
