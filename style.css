@@ -1017,16 +1017,9 @@ margin:auto;
 
 position:relative;
 
-background-image:
-
-linear-gradient(
-90deg,
-rgba(3,7,18,.95),
-rgba(3,7,18,.60)
-),
-
-url("file_6x.png");
-
+    background:
+    linear-gradient(rgba(3,7,18,.82),rgba(3,7,18,.90)),
+    url("file_6x.png") center/cover no-repeat;
 
 background-size:cover;
 
