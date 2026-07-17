@@ -9069,3 +9069,152 @@ box-shadow:
         
 }
         
+
+
+
+/* ==============================
+        ABOUT SECTION BACKGROUND
+============================== */
+
+.about{
+
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+rgba(3,7,18,.75),
+rgba(3,7,18,.92)
+),
+url("assets/images/about-bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+padding:120px 20px;
+
+}
+
+
+/* نور طلایی روی بک گراند */
+
+.about::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle at center,
+rgba(244,197,66,.18),
+transparent 55%
+);
+
+pointer-events:none;
+
+}
+
+
+/* محتوا روی تصویر */
+
+.about .container,
+.about-content{
+
+position:relative;
+z-index:2;
+
+}
+
+
+/* عنوان ABOUT */
+
+.about h2{
+
+color:#fff;
+
+font-size:48px;
+
+font-weight:800;
+
+text-align:center;
+
+text-shadow:
+
+0 0 20px rgba(244,197,66,.35);
+
+}
+
+
+.about .subtitle{
+
+color:#f4c542;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+text-align:center;
+
+}
+
+
+/* متن */
+
+.about p{
+
+color:#cbd5e1;
+
+max-width:850px;
+
+margin:25px auto;
+
+line-height:1.9;
+
+text-align:center;
+
+}
+
+
+/* کارت های پایین */
+
+.about .card{
+
+background:
+
+rgba(15,23,42,.65);
+
+border:
+
+1px solid rgba(244,197,66,.18);
+
+backdrop-filter:blur(12px);
+
+border-radius:22px;
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.35);
+
+transition:.4s;
+
+}
+
+
+.about .card:hover{
+
+transform:translateY(-8px);
+
+border-color:#f4c542;
+
+box-shadow:
+
+0 0 35px rgba(244,197,66,.25);
+
+}
+
+
+        
+        
