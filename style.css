@@ -6374,3 +6374,56 @@ font-size:48px;
 }
 
 }
+
+/* =========================================
+   HERO TEXT POSITION ADJUST
+   ========================================= */
+
+.hero-content{
+    transform:translateY(150px);
+}
+
+
+/* حذف فضای بالای اضافی متن */
+.hero-badge{
+    margin-bottom:25px;
+}
+
+
+/* عنوان پایین‌تر و مرتب‌تر */
+.hero h1{
+    margin-top:20px;
+}
+
+
+/* فاصله متن توضیح */
+.hero p{
+    margin-top:10px;
+}
+
+
+/* کارت‌ها پایین‌تر قرار بگیرند */
+.hero-features{
+    margin-top:45px;
+}
+
+
+/* دکمه‌ها هماهنگ شوند */
+.hero-buttons{
+    margin-top:35px;
+}
+
+
+/* موبایل */
+@media(max-width:768px){
+
+.hero-content{
+    transform:translateY(60px);
+}
+
+.hero-features{
+    margin-top:30px;
+}
+
+}
+        
