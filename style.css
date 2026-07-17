@@ -6072,3 +6072,275 @@ border-bottom:none;
     }
 
 }   
+
+
+        /* ==========================================
+   ANGEL COIN GOLD PREMIUM UPDATE
+========================================== */
+
+
+/* GOLD COLORS */
+
+:root{
+--gold:#e7b632;
+--gold-light:#ffd86b;
+--gold-dark:#9b6500;
+}
+
+
+/* HEADER GOLD FRAME */
+
+.header{
+
+background:
+rgba(5,8,18,.82);
+
+border:
+1px solid rgba(255,215,80,.65);
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.25),
+0 20px 50px rgba(0,0,0,.6);
+
+}
+
+
+/* REMOVE LOGO TEXT SPACE */
+
+.logo h2{
+
+display:none;
+
+}
+
+
+
+/* HERO TITLE */
+
+.hero h1{
+
+font-size:100px;
+font-weight:900;
+line-height:.92;
+text-transform:uppercase;
+
+}
+
+
+.hero h1 span{
+
+background:
+
+linear-gradient(
+180deg,
+#fff4a8,
+#ffd24d,
+#b87500
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 30px rgba(255,210,70,.65),
+0 0 70px rgba(244,197,66,.35);
+
+}
+
+
+
+/* BADGE */
+
+.hero-badge{
+
+background:
+
+rgba(244,197,66,.12);
+
+border:
+
+1px solid rgba(255,215,80,.8);
+
+color:#ffd86b;
+
+box-shadow:
+
+0 0 25px rgba(244,197,66,.25);
+
+}
+
+
+
+/* GOLD BUTTON */
+
+.gold-button,
+.buy-btn{
+
+
+background:
+
+linear-gradient(
+135deg,
+#fff1a3,
+#f4c542,
+#b87800
+);
+
+
+color:#111;
+
+
+border:
+
+1px solid #ffe28a;
+
+
+box-shadow:
+
+0 0 30px rgba(244,197,66,.7);
+
+
+}
+
+
+.gold-button:hover,
+.buy-btn:hover{
+
+
+box-shadow:
+
+0 0 55px rgba(255,215,80,.95);
+
+transform:translateY(-5px);
+
+
+}
+
+
+
+
+/* FEATURE CARDS */
+
+
+.feature-card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(20,20,20,.85),
+rgba(0,0,0,.75)
+);
+
+
+border:
+
+1px solid rgba(244,197,66,.7);
+
+
+box-shadow:
+
+
+0 0 25px rgba(244,197,66,.15),
+inset 0 0 30px rgba(244,197,66,.08);
+
+
+}
+
+
+
+.feature-card i{
+
+
+color:#ffd86b;
+
+
+background:
+
+rgba(244,197,66,.15);
+
+
+border:
+
+1px solid rgba(255,216,107,.7);
+
+
+box-shadow:
+
+0 0 20px rgba(244,197,66,.5);
+
+
+}
+
+
+
+.feature-card h3{
+
+
+color:#ffd86b;
+
+}
+
+
+
+/* TRUST BAR */
+
+
+.trust-item{
+
+
+border:
+
+1px solid rgba(244,197,66,.45);
+
+
+background:
+
+rgba(0,0,0,.55);
+
+
+}
+
+
+.trust-item i{
+
+
+color:#ffd86b;
+
+}
+
+
+
+/* HERO IMAGE GOLD LIGHT */
+
+.hero-image{
+
+filter:
+
+brightness(1.15)
+contrast(1.1)
+saturate(1.25)
+
+drop-shadow(
+0 0 50px rgba(244,197,66,.65)
+);
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+
+}
