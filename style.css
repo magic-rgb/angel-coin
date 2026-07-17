@@ -80,6 +80,9 @@ margin:auto;
 }
 
 
+.outline-button{
+    margin-left:10px;
+}
 
 /*================ HEADER ================*/
 
@@ -182,8 +185,9 @@ margin:auto;
 .hero-content{
 
     max-width:620px;
-
+    transform:translateY(80px);
 }
+
 
 .hero-badge{
 
@@ -219,53 +223,88 @@ margin:auto;
 
 }
 
+
 .hero h1{
 
-    font-size:92px;
+font-size:105px;
 
-    line-height:.92;
+font-weight:900;
 
-    font-weight:900;
+line-height:.9;
 
-    color:#fff;
+letter-spacing:-4px;
 
-    letter-spacing:-4px;
+text-transform:uppercase;
 
-    margin-bottom:18px;
+background:linear-gradient(
+180deg,
+#ffffff 0%,
+#f7f7f7 35%,
+#f4c542 100%
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 25px rgba(244,197,66,.18),
+
+0 0 60px rgba(244,197,66,.12);
 
 }
+
+
 
 .hero h1 span{
 
-    display:block;
+background:linear-gradient(
+180deg,
+#ffe78b,
+#f4c542,
+#d18d00
+);
 
-    color:#f4c542;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 30px rgba(244,197,66,.5);
 
 }
 
+
+
+
 .hero h2{
 
-    font-size:30px;
+font-size:34px;
 
-    font-weight:600;
+font-weight:700;
 
+letter-spacing:1px;
+
+margin-top:20px;
+
+margin-bottom:30px;
     color:#dfe7f5;
 
-    margin-bottom:25px;
+    
 
 }
 
 .hero p{
 
-    font-size:18px;
+font-size:19px;
 
-    line-height:1.9;
+line-height:2;
 
-    color:#aeb6c7;
+max-width:580px;
 
-    margin-bottom:40px;
+color:#c9d2df;
 
 }
+
 
 /*=========================================
             HERO VISUAL
@@ -309,6 +348,13 @@ margin:auto;
 }   
 
 
+.hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    margin-top:40px;
+    margin-bottom:45px;
+}
 
 /*================ GLOW =================*/
 
@@ -658,18 +704,6 @@ transform:rotate(0deg);
 
     font-weight:600;
 
-}
-
-@media(max-width:768px){
-
-.hero-trust{
-
-    justify-content:center;
-
-}
-
-}
-
 /*==================================================
                 HERO SCROLL
 ==================================================*/
@@ -751,19 +785,6 @@ transform:rotate(0deg);
         transform:translateY(6px);
 
     }
-
-}
-
-@media(max-width:768px){
-
-.hero-scroll{
-
-    display:none;
-
-}
-
-}
-
 
 
 
@@ -1266,34 +1287,7 @@ margin:auto;
 }
 
 }
-
-@media(max-width:768px){
-
-.about{
-
-    padding:90px 0;
-
-}
-
-.about-content h3{
-
-    font-size:34px;
-
-}
-
-.about-boxes{
-
-    grid-template-columns:1fr;
-
-}
-
-.about-image img{
-
-    max-width:340px;
-
-}
-
-}          
+       
 
 
 /*==================================================
