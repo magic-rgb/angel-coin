@@ -1,686 +1,2760 @@
+/*========================================================
+        ANGEL COIN PREMIUM ENGINE
+        APP.JS FINAL VERSION 2026
+        Secure / Optimized / Modern JS
+========================================================*/
+
 "use strict";
 
-/*==================================================
-            ANGEL COIN PREMIUM SCRIPT V2
-==================================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+const ANGEL = (()=>{
 
-const $ = (e)=>document.querySelector(e);
-const $$ = (e)=>document.querySelectorAll(e);
 
-/*=========================================
-            HEADER SCROLL
-=========================================*/
+/*========================================================
+        EXTRA MODULE QUEUE
+========================================================*/
 
-const header = $(".header");
 
-window.addEventListener("scroll",()=>{
+const ANGEL_EXTRA_INIT=[];
 
-if(window.scrollY>80){
 
-header.classList.add("header-scroll");
 
-}else{
 
-header.classList.remove("header-scroll");
+/*========================================================
+        CONFIGURATION
+========================================================*/
 
-}
 
-});
+const CONFIG={
 
-/*=========================================
-            SMOOTH SCROLL
-=========================================*/
 
-$$('a[href^="#"]').forEach(link=>{
+    selectors:{
 
-link.addEventListener("click",e=>{
 
-const target=document.querySelector(link.getAttribute("href"));
+        header:"header",
 
-if(!target) return;
+        hero:".hero",
 
-e.preventDefault();
+        cards:
+        ".token-card,.feature-card,.highlight-card,.stat-card,.card",
 
-window.scrollTo({
+        sections:"section",
 
-top:target.offsetTop-90,
+        counter:"[data-count]"
 
-behavior:"smooth"
 
-});
+    },
 
-});
 
-});
+    mobileBreakpoint:768
 
-/*=========================================
-            REVEAL ANIMATION
-=========================================*/
-
-const revealElements=$$(
-".reveal,.card,.about-box,.team-card,.roadmap-card,.stat-item,.feature-card"
-);
-
-const revealObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("active");
-
-}
-
-});
-
-},{
-
-threshold:.15
-
-});
-
-revealElements.forEach(item=>{
-
-item.classList.add("reveal");
-
-revealObserver.observe(item);
-
-});
-
-/*=========================================
-            STATS COUNTER
-=========================================*/
-
-const stats=$$(".stat-item strong");
-
-const counterObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(!entry.isIntersecting) return;
-
-const el=entry.target;
-
-const target=parseInt(el.dataset.target)||0;
-
-let current=0;
-
-const speed=target/120;
-
-const update=()=>{
-
-current+=speed;
-
-if(current<target){
-
-el.innerText=Math.floor(current);
-
-requestAnimationFrame(update);
-
-}else{
-
-el.innerText=target.toLocaleString();
-
-}
 
 };
 
-update();
 
-counterObserver.unobserve(el);
 
-});
 
-});
 
-stats.forEach(stat=>counterObserver.observe(stat));
 
-/*=========================================
-            PARALLAX HERO
-=========================================*/
 
-const hero=$(".hero");
+/*========================================================
+        HELPER FUNCTIONS
+========================================================*/
 
-window.addEventListener("scroll",()=>{
 
-const offset=window.pageYOffset;
+const Helper={
 
-if(hero){
 
-hero.style.backgroundPosition=`center ${offset*0.35}px`;
 
-}
+qs(selector,parent=document){
 
-});
 
+    try{
 
-/*=========================================
-        GOLD PARTICLES
-=========================================*/
+        return parent.querySelector(selector);
 
-function createParticle(){
+    }
 
-const p=document.createElement("span");
+    catch(e){
 
-p.className="gold-particle";
+        return null;
 
-p.style.left=Math.random()*100+"vw";
+    }
 
-const size=Math.random()*6+2;
-
-p.style.width=size+"px";
-p.style.height=size+"px";
-
-p.style.animationDuration=(Math.random()*8+8)+"s";
-
-p.style.opacity=Math.random();
-
-document.body.appendChild(p);
-
-setTimeout(()=>{
-
-p.remove();
-
-},17000);
-
-}
-
-setInterval(createParticle,350);
-
-
-/*=========================================
-        BACK TO TOP BUTTON
-=========================================*/
-
-const topButton=document.createElement("div");
-
-topButton.className="back-top";
-
-topButton.innerHTML='<i class="fa-solid fa-chevron-up"></i>';
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>600){
-
-topButton.classList.add("show");
-
-}else{
-
-topButton.classList.remove("show");
-
-}
-
-});
-
-topButton.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-});
-
-
-/*=========================================
-        ACTIVE MENU
-=========================================*/
-
-const sections=document.querySelectorAll("section");
-
-const navLinks=document.querySelectorAll("nav a");
-
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const top=section.offsetTop-150;
-
-const height=section.offsetHeight;
-
-if(pageYOffset>=top){
-
-current=section.getAttribute("id");
-
-}
-
-});
-
-navLinks.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href")==="#"+current){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-
-
-/*=========================================
-        CARD HOVER EFFECT
-=========================================*/
-
-document.querySelectorAll(
-
-".card,.feature-card,.about-box,.team-card,.roadmap-card"
-
-).forEach(card=>{
-
-card.addEventListener("mousemove",(e)=>{
-
-const rect=card.getBoundingClientRect();
-
-const x=e.clientX-rect.left;
-
-const y=e.clientY-rect.top;
-
-const rotateX=((y/rect.height)-0.5)*-8;
-
-const rotateY=((x/rect.width)-0.5)*8;
-
-card.style.transform=
-
-`perspective(900px)
-
-rotateX(${rotateX}deg)
-
-rotateY(${rotateY}deg)
-
-translateY(-8px)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="";
-
-});
-
-});
-
-
-/*=========================================
-        BUTTON GLOW
-=========================================*/
-
-document.querySelectorAll(
-
-".gold-button,.buy-btn"
-
-).forEach(btn=>{
-
-btn.addEventListener("mouseenter",()=>{
-
-btn.style.boxShadow=
-
-"0 0 35px rgba(244,197,66,.9)";
-
-});
-
-btn.addEventListener("mouseleave",()=>{
-
-btn.style.boxShadow="";
-
-});
-
-});
-
-
-/*=========================================
-        PRELOADER
-=========================================*/
-
-const loader=document.querySelector(".preloader");
-
-if(loader){
-
-window.addEventListener("load",()=>{
-
-loader.style.opacity="0";
-
-loader.style.visibility="hidden";
-
-setTimeout(()=>{
-
-loader.remove();
-
-},700);
-
-});
-
-}
-
-
-/*=========================================
-        HERO PARALLAX
-=========================================*/
-
-const heroImage=document.querySelector(".hero-image");
-const heroGlow=document.querySelector(".hero-glow");
-
-window.addEventListener("mousemove",(e)=>{
-
-if(!heroImage) return;
-
-const x=(e.clientX/window.innerWidth-.5)*20;
-const y=(e.clientY/window.innerHeight-.5)*20;
-
-heroImage.style.transform=
-`translate(${x}px,${y}px)`;
-
-if(heroGlow){
-
-heroGlow.style.transform=
-`translate(${x*.5}px,${y*.5}px)`;
-
-}
-
-});
-
-
-/*=========================================
-        MAGNET BUTTONS
-=========================================*/
-
-document.querySelectorAll(
-".gold-button,.buy-btn"
-).forEach(button=>{
-
-button.addEventListener("mousemove",(e)=>{
-
-const rect=button.getBoundingClientRect();
-
-const x=e.clientX-rect.left-rect.width/2;
-
-const y=e.clientY-rect.top-rect.height/2;
-
-button.style.transform=
-
-`translate(${x*.18}px,${y*.18}px)`;
-
-});
-
-button.addEventListener("mouseleave",()=>{
-
-button.style.transform="translate(0,0)";
-
-});
-
-});
-
-
-/*=========================================
-        IMAGE FADE
-=========================================*/
-
-const images=document.querySelectorAll("img");
-
-const imageObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-imageObserver.unobserve(entry.target);
-
-}
-
-});
-
-},{
-threshold:.2
-});
-
-images.forEach(img=>{
-
-img.style.opacity="0";
-
-img.style.transform="translateY(40px)";
-
-img.style.transition="1s";
-
-imageObserver.observe(img);
-
-});
-
-
-/*=========================================
-        RANDOM GLOW
-=========================================*/
-
-setInterval(()=>{
-
-document.querySelectorAll(
-
-".card,.about-box,.feature-card"
-
-).forEach(card=>{
-
-card.style.boxShadow=
-
-`0 0 ${20+Math.random()*40}px rgba(244,197,66,.15)`;
-
-});
-
-},2500);
-
-
-/*=========================================
-        HERO FLOAT
-=========================================*/
-
-let floatValue=0;
-
-setInterval(()=>{
-
-floatValue+=0.02;
-
-if(heroImage){
-
-heroImage.style.marginTop=
-
-Math.sin(floatValue)*12+"px";
-
-}
-
-},16);
-
-
-
-/*=========================================
-        CUSTOM CURSOR
-=========================================*/
-
-const cursor=document.createElement("div");
-
-cursor.className="cursor-glow";
-
-document.body.appendChild(cursor);
-
-document.addEventListener("mousemove",(e)=>{
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
-});
-
-document.querySelectorAll(
-
-"a,button,.card,.feature-card,.team-card,.about-box"
-
-).forEach(item=>{
-
-item.addEventListener("mouseenter",()=>{
-
-cursor.classList.add("active");
-
-});
-
-item.addEventListener("mouseleave",()=>{
-
-cursor.classList.remove("active");
-
-});
-
-});
-
-
-/*=========================================
-        HERO TYPE EFFECT
-=========================================*/
-
-const heroTitle=document.querySelector(".hero h2");
-
-if(heroTitle){
-
-const text=heroTitle.textContent;
-
-heroTitle.textContent="";
-
-let i=0;
-
-function typing(){
-
-if(i<text.length){
-
-heroTitle.textContent+=text.charAt(i);
-
-i++;
-
-setTimeout(typing,45);
-
-}
-
-}
-
-typing();
-
-}
-
-
-/*=========================================
-        SECTION GLOW
-=========================================*/
-
-const sectionObserver=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.animate([
-
-{
-
-opacity:.92,
-
-transform:"translateY(40px)"
 
 },
 
-{
 
-opacity:1,
 
-transform:"translateY(0)"
+qsa(selector,parent=document){
+
+
+    try{
+
+        return [
+        ...parent.querySelectorAll(selector)
+        ];
+
+    }
+
+    catch(e){
+
+        return [];
+
+    }
+
+
+},
+
+
+
+clamp(value,min,max){
+
+    return Math.min(
+    Math.max(value,min),
+    max
+    );
+
+},
+
+
+
+random(min,max){
+
+    return Math.random()*
+    (max-min)+min;
+
+},
+
+
+
+throttle(fn,delay=100){
+
+
+    let waiting=false;
+
+
+    return (...args)=>{
+
+
+        if(waiting)
+        return;
+
+
+
+        waiting=true;
+
+
+
+        requestAnimationFrame(()=>{
+
+
+            fn(...args);
+
+
+
+            setTimeout(()=>{
+
+
+                waiting=false;
+
+
+            },delay);
+
+
+
+        });
+
+
+
+    };
+
+
+},
+
+
+
+debounce(fn,delay=300){
+
+
+    let timer;
+
+
+    return (...args)=>{
+
+
+        clearTimeout(timer);
+
+
+
+        timer=setTimeout(()=>{
+
+
+            fn(...args);
+
+
+
+        },delay);
+
+
+
+    };
+
+
+},
+
+
+
+isMobile(){
+
+
+    return window.innerWidth <
+    CONFIG.mobileBreakpoint;
+
+
+},
+
+
+
+reducedMotion(){
+
+
+    return window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+    ).matches;
+
 
 }
 
-],{
 
-duration:900,
 
-fill:"forwards",
+};
 
-easing:"ease"
 
-});
+
+
+
+
+
+/*========================================================
+        DOM CACHE
+========================================================*/
+
+
+const DOM={
+
+
+
+header:null,
+
+hero:null,
+
+cards:[],
+
+sections:[],
+
+counters:[],
+
+
+
+load(){
+
+
+
+this.header=
+Helper.qs(
+CONFIG.selectors.header
+);
+
+
+
+this.hero=
+Helper.qs(
+CONFIG.selectors.hero
+);
+
+
+
+this.cards=
+Helper.qsa(
+CONFIG.selectors.cards
+);
+
+
+
+this.sections=
+Helper.qsa(
+CONFIG.selectors.sections
+);
+
+
+
+this.counters=
+Helper.qsa(
+CONFIG.selectors.counter
+);
+
+
 
 }
 
-});
-
-},{threshold:.15});
-
-document.querySelectorAll("section").forEach(section=>{
-
-sectionObserver.observe(section);
-
-});
 
 
-/*=========================================
-        RANDOM STAR TWINKLE
-=========================================*/
-
-setInterval(()=>{
-
-const stars=document.querySelectorAll(".gold-particle");
-
-stars.forEach(star=>{
-
-star.style.opacity=Math.random();
-
-});
-
-},800);
+};
 
 
-/*=========================================
-        FPS OPTIMIZATION
-=========================================*/
-
-let resizeTimer;
-
-window.addEventListener("resize",()=>{
-
-clearTimeout(resizeTimer);
-
-resizeTimer=setTimeout(()=>{
-
-window.dispatchEvent(new Event("scroll"));
-
-},200);
-
-});
 
 
-/*=========================================
-        FINISH
-=========================================*/
 
-console.log(
 
-"%cANGEL COIN PREMIUM",
 
-"color:#FFD86B;font-size:22px;font-weight:bold;"
+/*========================================================
+        PERFORMANCE
+========================================================*/
+
+
+const Performance={
+
+
+
+init(){
+
+
+if(
+"scrollRestoration" in history
+){
+
+history.scrollRestoration="manual";
+
+}
+
+
+
+document.documentElement.style.scrollBehavior=
+"smooth";
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        NAVBAR ENGINE
+========================================================*/
+
+
+const Navigation={
+
+
+
+lastScroll:0,
+
+
+
+init(){
+
+
+
+if(!DOM.header)
+return;
+
+
+
+window.addEventListener(
+
+"scroll",
+
+Helper.throttle(()=>{
+
+
+this.update();
+
+
+},80)
+
+
 
 );
 
-console.log(
 
-"Premium UI Loaded Successfully"
+
+},
+
+
+
+
+update(){
+
+
+const scroll=
+window.scrollY;
+
+
+
+if(scroll>50){
+
+
+DOM.header.classList.add(
+"scrolled"
+);
+
+
+}
+
+else{
+
+
+DOM.header.classList.remove(
+"scrolled"
+);
+
+
+}
+
+
+
+
+if(
+scroll>this.lastScroll &&
+scroll>150
+){
+
+
+DOM.header.classList.add(
+"hide"
+);
+
+
+}
+
+else{
+
+
+DOM.header.classList.remove(
+"hide"
+);
+
+
+}
+
+
+
+this.lastScroll=
+scroll;
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        SMOOTH SCROLL
+========================================================*/
+
+
+const Smooth={
+
+
+
+init(){
+
+
+
+Helper.qsa(
+'a[href^="#"]'
+)
+.forEach(link=>{
+
+
+
+link.addEventListener(
+
+"click",
+
+event=>{
+
+
+const target=
+Helper.qs(
+link.getAttribute("href")
+);
+
+
+
+if(!target)
+return;
+
+
+
+event.preventDefault();
+
+
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+
+}
+
+
 
 );
+
+
+
+});
+
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        MAIN INIT
+========================================================*/
+
+
+function init(){
+
+
+
+try{
+
+
+DOM.load();
+
+
+Performance.init();
+
+
+Navigation.init();
+
+
+Smooth.init();
+
+
+
+/*
+ فعال کردن تمام ماژول‌های پارت‌های بعدی
+*/
+
+
+ANGEL_EXTRA_INIT
+.forEach(module=>{
+
+
+try{
+
+module();
+
+}
+
+catch(error){
+
+console.warn(
+"Module Error:",
+error
+);
+
+}
+
+
+});
+
+
+
+}
+
+catch(error){
+
+
+console.error(
+"ANGEL ENGINE ERROR:",
+error
+);
+
+
+}
+
+
+
+}
+
+
+
+
+
+return {
+
+
+init,
+
+
+Helper,
+
+
+DOM
+
+
+};
+
+
+
+})();
+
+
+
+
+
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+
+ANGEL.init();
+
+
+}
+
+);
+
+/*========================================================
+        SCROLL REVEAL ENGINE
+========================================================*/
+
+
+const RevealEngine={
+
+
+    observer:null,
+
+
+    init(){
+
+
+        if(
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+        this.observer=
+        new IntersectionObserver(
+
+
+            entries=>{
+
+
+                entries.forEach(entry=>{
+
+
+                    if(
+                    entry.isIntersecting
+                    ){
+
+
+                        entry.target
+                        .classList
+                        .add("show");
+
+
+
+                        this.observer
+                        .unobserve(
+                        entry.target
+                        );
+
+
+                    }
+
+
+
+                });
+
+
+
+            },
+
+
+            {
+
+                threshold:.15,
+
+                rootMargin:
+                "0px 0px -80px"
+
+            }
+
+
+
+        );
+
+
+
+        DOM.sections.forEach(
+        section=>{
+
+
+            section.classList
+            .add("reveal");
+
+
+            this.observer
+            .observe(
+            section
+            );
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+/*========================================================
+        COUNTER ANIMATION ENGINE
+========================================================*/
+
+
+const CounterEngine={
+
+
+    started:false,
+
+
+
+    init(){
+
+
+        if(
+        !DOM.counters.length
+        )
+        return;
+
+
+
+        const observer=
+        new IntersectionObserver(
+
+
+            entries=>{
+
+
+                entries.forEach(
+                entry=>{
+
+
+                    if(
+                    entry.isIntersecting
+                    ){
+
+
+                        this.animate(
+                        entry.target
+                        );
+
+
+                        observer
+                        .unobserve(
+                        entry.target
+                        );
+
+
+                    }
+
+
+
+                });
+
+
+            },
+
+
+            {
+
+                threshold:.7
+
+            }
+
+
+
+        );
+
+
+
+        DOM.counters.forEach(
+        counter=>{
+
+
+            observer.observe(
+            counter
+            );
+
+
+        });
+
+
+
+    },
+
+
+
+
+    animate(element){
+
+
+        const target=
+        Number(
+        element.dataset.count
+        );
+
+
+
+        if(
+        Number.isNaN(target)
+        )
+        return;
+
+
+
+        let current=0;
+
+
+
+        const speed=
+        Math.max(
+        20,
+        2000/target
+        );
+
+
+
+        const update=()=>{
+
+
+            current +=
+            Math.ceil(
+            target/80
+            );
+
+
+
+            if(
+            current>=target
+            ){
+
+
+                element.textContent=
+                target.toLocaleString();
+
+
+                return;
+
+
+            }
+
+
+
+            element.textContent=
+            current.toLocaleString();
+
+
+
+            requestAnimationFrame(
+            update
+            );
+
+
+
+        };
+
+
+
+        update();
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        HERO PARALLAX ENGINE
+========================================================*/
+
+
+const ParallaxEngine={
+
+
+    enabled:true,
+
+
+    init(){
+
+
+        if(
+        !DOM.hero ||
+        Helper.isMobile() ||
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+
+        window.addEventListener(
+
+        "scroll",
+
+        Helper.throttle(()=>{
+
+
+            this.move();
+
+
+
+        },30)
+
+
+
+        );
+
+
+
+    },
+
+
+
+    move(){
+
+
+        const scroll=
+        window.scrollY;
+
+
+
+        const speed=
+        scroll*.25;
+
+
+
+        DOM.hero.style
+        .transform=
+        `translate3d(0,${speed}px,0)`;
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+/*========================================================
+        SCROLL PROGRESS BAR
+========================================================*/
+
+
+const ProgressBar={
+
+
+    bar:null,
+
+
+
+    init(){
+
+
+        this.bar=
+        document.createElement(
+        "div"
+        );
+
+
+        this.bar.id=
+        "scroll-progress";
+
+
+
+        Object.assign(
+
+        this.bar.style,
+
+        {
+
+        position:"fixed",
+
+        top:"0",
+
+        left:"0",
+
+        height:"3px",
+
+        width:"0%",
+
+        zIndex:"99999",
+
+        background:
+        "linear-gradient(90deg,#f4c542,#ffe78b)",
+
+        transition:
+        "width .15s ease"
+
+        }
+
+
+        );
+
+
+
+        document.body
+        .appendChild(
+        this.bar
+        );
+
+
+
+        window.addEventListener(
+
+        "scroll",
+
+        Helper.throttle(()=>{
+
+
+            this.update();
+
+
+        },50)
+
+        );
+
+
+
+    },
+
+
+
+    update(){
+
+
+        const height=
+        document.documentElement
+        .scrollHeight -
+        window.innerHeight;
+
+
+
+        const progress=
+        (
+        window.scrollY /
+        height
+        )*100;
+
+
+
+        this.bar.style.width=
+        `${progress}%`;
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        ACTIVATE PART 2 MODULES
+========================================================*/
+
+
+ANGEL_EXTRA_INIT.push(()=>{
+
+
+    RevealEngine.init();
+
+
+    CounterEngine.init();
+
+
+    ParallaxEngine.init();
+
+
+    ProgressBar.init();
+
+
+
+});
+
+
+/*========================================================
+        MOUSE GOLD GLOW ENGINE
+========================================================*/
+
+
+const GlowEngine={
+
+
+    light:null,
+
+
+    init(){
+
+
+        if(
+        Helper.isMobile() ||
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+        this.create();
+
+
+
+        window.addEventListener(
+
+        "mousemove",
+
+        Helper.throttle(
+        e=>{
+
+            this.move(e);
+
+        },16)
+
+        );
+
+
+
+    },
+
+
+
+    create(){
+
+
+        this.light=
+        document.createElement(
+        "div"
+        );
+
+
+        this.light.className=
+        "angel-mouse-glow";
+
+
+
+        Object.assign(
+
+        this.light.style,
+
+        {
+
+        position:"fixed",
+
+        width:"280px",
+
+        height:"280px",
+
+        borderRadius:"50%",
+
+        pointerEvents:"none",
+
+        zIndex:"9998",
+
+        opacity:"0",
+
+        background:
+        "radial-gradient(circle,rgba(244,197,66,.22),transparent 70%)",
+
+        transform:
+        "translate(-50%,-50%)",
+
+        transition:
+        "opacity .4s ease"
+
+        }
+
+
+        );
+
+
+
+        document.body
+        .appendChild(
+        this.light
+        );
+
+
+
+    },
+
+
+
+
+    move(event){
+
+
+        this.light.style.left=
+        event.clientX+"px";
+
+
+        this.light.style.top=
+        event.clientY+"px";
+
+
+        this.light.style.opacity=
+        "1";
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        CARD 3D TILT ENGINE
+========================================================*/
+
+
+const TiltEngine={
+
+
+    init(){
+
+
+        if(
+        Helper.isMobile() ||
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+        DOM.cards.forEach(card=>{
+
+
+            card.addEventListener(
+
+            "mousemove",
+
+            e=>{
+
+
+                this.move(
+                e,
+                card
+                );
+
+
+            }
+
+
+            );
+
+
+
+            card.addEventListener(
+
+            "mouseleave",
+
+            ()=>{
+
+
+                card.style.transform=
+                "rotateX(0) rotateY(0)";
+
+
+
+            }
+
+
+            );
+
+
+
+        });
+
+
+
+    },
+
+
+
+    move(event,card){
+
+
+
+        const rect=
+        card.getBoundingClientRect();
+
+
+
+        const x=
+        event.clientX -
+        rect.left;
+
+
+
+        const y=
+        event.clientY -
+        rect.top;
+
+
+
+        const centerX=
+        rect.width/2;
+
+
+
+        const centerY=
+        rect.height/2;
+
+
+
+        const rotateY=
+        ((x-centerX)/centerX)*10;
+
+
+
+        const rotateX=
+        ((centerY-y)/centerY)*10;
+
+
+
+        card.style.transform=
+
+        `perspective(900px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateY(-8px)`;
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+/*========================================================
+        MAGNETIC BUTTON ENGINE
+========================================================*/
+
+
+const MagneticButtons={
+
+
+    init(){
+
+
+        if(
+        Helper.isMobile()
+        )
+        return;
+
+
+
+        const buttons=
+        Helper.qsa(
+        "button,.btn,.hero a"
+        );
+
+
+
+        buttons.forEach(btn=>{
+
+
+            btn.addEventListener(
+
+            "mousemove",
+
+            e=>{
+
+
+                const box=
+                btn.getBoundingClientRect();
+
+
+
+                const x=
+                e.clientX -
+                box.left -
+                box.width/2;
+
+
+
+                const y=
+                e.clientY -
+                box.top -
+                box.height/2;
+
+
+
+                btn.style.transform=
+
+                `translate(
+                ${x*.18}px,
+                ${y*.18}px
+                )`;
+
+
+
+            });
+
+
+
+            btn.addEventListener(
+
+            "mouseleave",
+
+            ()=>{
+
+
+                btn.style.transform=
+                "";
+
+
+
+            });
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        GLASS REFLECTION ENGINE
+========================================================*/
+
+
+const ReflectionEngine={
+
+
+    init(){
+
+
+        DOM.cards.forEach(card=>{
+
+
+            const shine=
+            document.createElement(
+            "span"
+            );
+
+
+
+            shine.className=
+            "card-shine";
+
+
+
+            card.appendChild(
+            shine
+            );
+
+
+
+            card.addEventListener(
+
+            "mousemove",
+
+            e=>{
+
+
+                const rect=
+                card.getBoundingClientRect();
+
+
+
+                shine.style.left=
+                (
+                e.clientX-
+                rect.left
+                )+"px";
+
+
+
+                shine.style.top=
+                (
+                e.clientY-
+                rect.top
+                )+"px";
+
+
+
+            });
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        FLOATING ELEMENT ENGINE
+========================================================*/
+
+
+const FloatingEngine={
+
+
+    init(){
+
+
+        const items=
+        Helper.qsa(
+        ".floating,.orb,.coin"
+        );
+
+
+
+        items.forEach(
+        (item,index)=>{
+
+
+            item.animate(
+
+            [
+
+            {
+            transform:"translateY(0)"
+            },
+
+            {
+            transform:
+            "translateY(-20px)"
+            },
+
+            {
+            transform:
+            "translateY(0)"
+            }
+
+            ],
+
+            {
+
+
+            duration:
+            3000+
+            index*400,
+
+
+            iterations:
+            Infinity,
+
+
+            easing:
+            "ease-in-out"
+
+
+            }
+
+            );
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+/*========================================================
+        ACTIVATE PART 3
+========================================================*/
+
+
+ANGEL_EXTRA_INIT.push(()=>{
+
+
+    GlowEngine.init();
+
+
+    TiltEngine.init();
+
+
+    MagneticButtons.init();
+
+
+    ReflectionEngine.init();
+
+
+    FloatingEngine.init();
+
+
+
+});
+
+
+/*========================================================
+        GOLD PARTICLE ENGINE
+========================================================*/
+
+
+const ParticleEngine={
+
+
+    canvas:null,
+
+    ctx:null,
+
+    particles:[],
+
+    running:false,
+
+
+
+    init(){
+
+
+        if(
+        Helper.isMobile() ||
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+        this.createCanvas();
+
+
+        this.resize();
+
+
+        this.createParticles();
+
+
+        this.animate();
+
+
+
+        window.addEventListener(
+
+        "resize",
+
+        Helper.debounce(()=>{
+
+            this.resize();
+
+        },300)
+
+        );
+
+
+    },
+
+
+
+
+    createCanvas(){
+
+
+        this.canvas=
+        document.createElement(
+        "canvas"
+        );
+
+
+        this.canvas.id=
+        "angel-particles";
+
+
+
+        Object.assign(
+
+        this.canvas.style,
+
+        {
+
+        position:"fixed",
+
+        inset:"0",
+
+        pointerEvents:"none",
+
+        zIndex:"-1"
+
+        }
+
+
+        );
+
+
+
+        document.body
+        .appendChild(
+        this.canvas
+        );
+
+
+
+        this.ctx=
+        this.canvas.getContext(
+        "2d"
+        );
+
+
+    },
+
+
+
+
+    resize(){
+
+
+        this.canvas.width=
+        window.innerWidth;
+
+
+
+        this.canvas.height=
+        window.innerHeight;
+
+
+
+    },
+
+
+
+
+    createParticles(){
+
+
+        const count=80;
+
+
+        this.particles=[];
+
+
+
+        for(
+        let i=0;
+        i<count;
+        i++
+        ){
+
+
+            this.particles.push({
+
+                x:
+                Math.random()*
+                this.canvas.width,
+
+
+                y:
+                Math.random()*
+                this.canvas.height,
+
+
+                size:
+                Helper.random(
+                1,
+                3
+                ),
+
+
+                speed:
+                Helper.random(
+                .2,
+                .8
+                ),
+
+
+                opacity:
+                Helper.random(
+                .2,
+                .8
+                )
+
+
+            });
+
+
+        }
+
+
+
+    },
+
+
+
+
+    animate(){
+
+
+        if(!this.ctx)
+        return;
+
+
+
+        this.ctx.clearRect(
+
+        0,
+
+        0,
+
+        this.canvas.width,
+
+        this.canvas.height
+
+        );
+
+
+
+
+        this.particles.forEach(p=>{
+
+
+            p.y-=p.speed;
+
+
+
+            if(
+            p.y<0
+            ){
+
+                p.y=
+                this.canvas.height;
+
+            }
+
+
+
+            this.ctx.beginPath();
+
+
+            this.ctx.arc(
+
+            p.x,
+
+            p.y,
+
+            p.size,
+
+            0,
+
+            Math.PI*2
+
+            );
+
+
+
+            this.ctx.fillStyle=
+            `rgba(244,197,66,${p.opacity})`;
+
+
+
+            this.ctx.fill();
+
+
+
+        });
+
+
+
+        requestAnimationFrame(
+
+        ()=>this.animate()
+
+        );
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        CUSTOM CURSOR ENGINE
+========================================================*/
+
+
+const CursorEngine={
+
+
+    cursor:null,
+
+
+    init(){
+
+
+        if(
+        Helper.isMobile() ||
+        Helper.reducedMotion()
+        )
+        return;
+
+
+
+        this.cursor=
+        document.createElement(
+        "div"
+        );
+
+
+
+        this.cursor.className=
+        "angel-cursor";
+
+
+
+        Object.assign(
+
+        this.cursor.style,
+
+        {
+
+        width:"22px",
+
+        height:"22px",
+
+        border:
+        "1px solid #f4c542",
+
+        borderRadius:"50%",
+
+        position:"fixed",
+
+        pointerEvents:"none",
+
+        zIndex:"99999",
+
+        transform:
+        "translate(-50%,-50%)",
+
+        transition:
+        "transform .15s ease"
+
+        }
+
+
+        );
+
+
+
+        document.body
+        .appendChild(
+        this.cursor
+        );
+
+
+
+        window.addEventListener(
+
+        "mousemove",
+
+        e=>{
+
+
+            this.cursor.style.left=
+            e.clientX+"px";
+
+
+
+            this.cursor.style.top=
+            e.clientY+"px";
+
+
+
+        }
+
+        );
+
+
+
+        this.hover();
+
+
+    },
+
+
+
+
+    hover(){
+
+
+        Helper.qsa(
+        "a,button,.card"
+        )
+        .forEach(item=>{
+
+
+            item.addEventListener(
+
+            "mouseenter",
+
+            ()=>{
+
+
+                this.cursor.style.transform=
+                "translate(-50%,-50%) scale(2)";
+
+
+            });
+
+
+
+            item.addEventListener(
+
+            "mouseleave",
+
+            ()=>{
+
+
+                this.cursor.style.transform=
+                "translate(-50%,-50%) scale(1)";
+
+
+            });
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        LAZY IMAGE OPTIMIZER
+========================================================*/
+
+
+const LazyImage={
+
+
+    init(){
+
+
+        const images=
+        Helper.qsa(
+        "img[data-src]"
+        );
+
+
+
+        if(
+        !images.length
+        )
+        return;
+
+
+
+        const observer=
+        new IntersectionObserver(
+
+        entries=>{
+
+
+            entries.forEach(
+            entry=>{
+
+
+                if(
+                entry.isIntersecting
+                ){
+
+
+                    const img=
+                    entry.target;
+
+
+
+                    img.src=
+                    img.dataset.src;
+
+
+
+                    img.removeAttribute(
+                    "data-src"
+                    );
+
+
+
+                    observer.unobserve(
+                    img
+                    );
+
+
+                }
+
+
+
+            });
+
+
+        });
+
+
+
+        images.forEach(
+        img=>
+        observer.observe(img)
+        );
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        BACKGROUND ORB ENGINE
+========================================================*/
+
+
+const OrbEngine={
+
+
+    init(){
+
+
+        const orbs=
+        Helper.qsa(
+        ".orb"
+        );
+
+
+
+        orbs.forEach(
+        (orb,i)=>{
+
+
+            orb.animate(
+
+            [
+
+            {
+            transform:
+            "translate(0,0)"
+            },
+
+            {
+            transform:
+            `translate(
+            ${30+i*10}px,
+            ${-40-i*5}px
+            )`
+            },
+
+            {
+            transform:
+            "translate(0,0)"
+            }
+
+            ],
+
+            {
+
+
+            duration:
+            6000+i*800,
+
+
+            iterations:
+            Infinity,
+
+
+            easing:
+            "ease-in-out"
+
+
+            }
+
+            );
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+/*========================================================
+        ACTIVATE PART 4
+========================================================*/
+
+
+ANGEL_EXTRA_INIT.push(()=>{
+
+
+    ParticleEngine.init();
+
+
+    CursorEngine.init();
+
+
+    LazyImage.init();
+
+
+    OrbEngine.init();
+
+
+
+});
+
+
+/*========================================================
+        SECURITY LAYER
+========================================================*/
+
+
+const SecurityEngine={
+
+
+    init(){
+
+
+        this.preventBrokenImages();
+
+
+        this.cleanExternalLinks();
+
+
+    },
+
+
+
+
+    preventBrokenImages(){
+
+
+        Helper.qsa("img")
+        .forEach(img=>{
+
+
+            img.addEventListener(
+
+            "error",
+
+            ()=>{
+
+
+                img.style.opacity="0";
+
+
+
+            });
+
+
+
+        });
+
+
+
+    },
+
+
+
+
+    cleanExternalLinks(){
+
+
+        Helper.qsa(
+        'a[target="_blank"]'
+        )
+        .forEach(link=>{
+
+
+            link.setAttribute(
+            "rel",
+            "noopener noreferrer"
+            );
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        AUTO ANIMATION MANAGER
+========================================================*/
+
+
+const AnimationManager={
+
+
+    paused:false,
+
+
+
+    init(){
+
+
+        document.addEventListener(
+
+        "visibilitychange",
+
+        ()=>{
+
+
+            this.paused=
+            document.hidden;
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        PERFORMANCE MONITOR
+========================================================*/
+
+
+const FPSOptimizer={
+
+
+    init(){
+
+
+        if(
+        !window.requestIdleCallback
+        )
+        return;
+
+
+
+        requestIdleCallback(()=>{
+
+
+            this.optimize();
+
+
+        });
+
+
+
+    },
+
+
+
+    optimize(){
+
+
+        Helper.qsa(
+        ".animate,.floating"
+        )
+        .forEach(el=>{
+
+
+            el.style.willChange=
+            "transform";
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        MOBILE TOUCH OPTIMIZER
+========================================================*/
+
+
+const MobileOptimizer={
+
+
+    init(){
+
+
+        if(
+        !Helper.isMobile()
+        )
+        return;
+
+
+
+        document.body.classList
+        .add("mobile-device");
+
+
+
+        Helper.qsa(
+        ".tilt,.magnetic"
+        )
+        .forEach(el=>{
+
+
+            el.style.transform=
+            "none";
+
+
+
+        });
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        BACK TO TOP BUTTON
+========================================================*/
+
+
+const BackTop={
+
+
+    button:null,
+
+
+    init(){
+
+
+        this.button=
+        document.createElement(
+        "button"
+        );
+
+
+        this.button.innerHTML=
+        "↑";
+
+
+
+        this.button.className=
+        "back-top";
+
+
+
+        Object.assign(
+
+        this.button.style,
+
+        {
+
+        position:"fixed",
+
+        bottom:"30px",
+
+        right:"30px",
+
+        width:"45px",
+
+        height:"45px",
+
+        borderRadius:"50%",
+
+        cursor:"pointer",
+
+        zIndex:"9999"
+
+        }
+
+
+
+        );
+
+
+
+        document.body
+        .appendChild(
+        this.button
+        );
+
+
+
+
+        this.button.addEventListener(
+
+        "click",
+
+        ()=>{
+
+
+            window.scrollTo({
+
+                top:0,
+
+                behavior:"smooth"
+
+            });
+
+
+
+        });
+
+
+
+        window.addEventListener(
+
+        "scroll",
+
+        Helper.throttle(()=>{
+
+
+            this.toggle();
+
+
+        },100)
+
+
+
+        );
+
+
+
+    },
+
+
+
+
+    toggle(){
+
+
+        this.button.style.opacity=
+
+        window.scrollY>500
+        ?
+        "1"
+        :
+        "0";
+
+
+
+    }
+
+
+
+};
+
+
+
+
+
+
+
+
+/*========================================================
+        FINAL STARTUP
+========================================================*/
+
+
+ANGEL_EXTRA_INIT.push(()=>{
+
+
+    SecurityEngine.init();
+
+
+    AnimationManager.init();
+
+
+    FPSOptimizer.init();
+
+
+    MobileOptimizer.init();
+
+
+    BackTop.init();
+
+
 
 });
 
@@ -688,6 +2762,33 @@ console.log(
 
 
 
-            
-            
-                          
+
+
+
+/*========================================================
+        FINAL READY EVENT
+========================================================*/
+
+
+window.addEventListener(
+
+"load",
+
+()=>{
+
+
+    document.body
+    .classList
+    .add("angel-ready");
+
+
+
+    console.log(
+    "ANGEL COIN ENGINE READY"
+    );
+
+
+
+});
+
+
