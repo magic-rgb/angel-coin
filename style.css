@@ -10977,4 +10977,480 @@ transform:scaleX(1);
 }
 
 }  
+
+        /*==================================================
+            TOKENOMICS PREMIUM V3
+==================================================*/
+
+.tokenomics{
+    position:relative;
+    overflow:hidden;
+    padding:140px 8%;
+    background:linear-gradient(180deg,#030712,#081225,#030712);
+}
+
+.tokenomics .container{
+    max-width:1400px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.token-header{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.section-tag{
+    display:inline-block;
+    color:#f4c542;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.token-header h2{
+    font-size:56px;
+    font-weight:900;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.token-header p{
+    max-width:720px;
+    margin:auto;
+    color:#bfc8d8;
+    line-height:1.9;
+    font-size:18px;
+}
+
+.token-wrapper{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.token-chart-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.chart-ring{
+    position:relative;
+    width:360px;
+    height:360px;
+}
+
+.token-svg{
+    width:100%;
+    height:100%;
+    transform:rotate(-90deg);
+}
+
+.track{
+    fill:none;
+    stroke:#1d2745;
+    stroke-width:18;
+}
+
+.chart-center{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.chart-center img{
+    width:80px;
+    margin-bottom:15px;
+}
+
+.chart-center h3{
+    color:#fff;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.chart-center span{
+    color:#f4c542;
+}
+
+/*=========================================
+        TOKEN CARDS
+=========================================*/
+
+.token-cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:28px;
+
+}
+
+.token-card{
+
+position:relative;
+
+padding:30px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:.45s;
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.token-card:hover{
+
+transform:
+
+translateY(-12px);
+
+border-color:#f4c542;
+
+box-shadow:
+
+0 30px 70px rgba(0,0,0,.45),
+
+0 0 35px rgba(244,197,66,.22);
+
+}
+
+.token-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-40%;
+
+top:0;
+
+width:40%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.12),
+
+transparent
+
+);
+
+transform:skewX(-20deg);
+
+transition:.8s;
+
+}
+
+.token-card:hover::before{
+
+left:140%;
+
+}
+
+.card-top{
+
+display:flex;
+
+justify-content:space-between;
+
+/*=========================================
+            TOKEN STATS
+=========================================*/
+
+.token-stats{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:24px;
+
+margin-top:90px;
+
+}
+
+.stat-card{
+
+position:relative;
+
+padding:35px 25px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+transition:.4s;
+
+overflow:hidden;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#f4c542;
+
+box-shadow:
+
+0 20px 60px rgba(244,197,66,.18);
+
+}
+
+.stat-card span{
+
+display:block;
+
+color:#f4c542;
+
+font-size:14px;
+
+letter-spacing:2px;
+
+margin-bottom:15px;
+
+text-transform:uppercase;
+
+}
+
+.stat-card h2{
+
+font-size:44px;
+
+font-weight:900;
+
+color:#fff;
+
+margin-bottom:
+
+
+        /*=========================================
+          TOKEN HIGHLIGHTS
+=========================================*/
+
+.token-highlights{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:28px;
+
+margin-top:80px;
+
+}
+
+.highlight-card{
+
+position:relative;
+
+padding:35px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:.45s;
+
+text-align:center;
+
+}
+
+.highlight-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:80%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.15),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+}
+
+.highlight-card:hover::before{
+
+left:140%;
+
+}
+
+.highlight-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#f4c542;
+
+box-shadow:
+
+0 25px 70px rgba(244,197,66,.20);
+
+}
+
+.highlight-card h4{
+
+color:#f4c542;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+margin-bottom:15px;
+
+text-transform:uppercase;
+
+}
+
+.highlight-card h2{
+
+font-size:36px;
+
+font-weight:900;
+
+color:#fff;
+
+margin-bottom:15px;
+
+}
+
+.highlight-card p{
+
+color:#bfc8d8;
+
+line-height:1.8;
+
+}
+
+/*=========================================
+            BACKGROUND GLOW
+=========================================*/
+
+.token-blur{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.blur-1{
+
+width:420px;
+
+height:420px;
+
+left:-120px;
+
+top:120px;
+
+background:rgba(244,197,66,.12);
+
+}
+
+.blur-2{
+
+width:380px;
+
+height:380px;
+
+right:-100px;
+
+bottom:80px;
+
+background:rgba(77,168,255,.10);
+
+}
+
+.chart-glow{
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(244,197,66,.18) 0%,
+rgba(244,197,66,.05) 60%,
+transparent 100%);
+
+filter:blur(30px);
+
+animation:chart
+
+
+        
+
+        
+
+        
         
