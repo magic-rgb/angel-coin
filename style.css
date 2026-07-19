@@ -4409,72 +4409,101 @@ section{
 }
 
 
-/* ===== NEW HERO SYSTEM ===== */
+
+/* ================= NEW HERO ================= */
+
 
 .hero{
+
 position:relative;
+
 min-height:100vh;
-background:url("file_xxxx.png") center/cover no-repeat;
+
 display:flex;
+
 align-items:center;
+
 overflow:hidden;
+
+background-image:url("file_xxxx.png");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
 }
 
 
-.hero::before{
+.hero-overlay{
 
-content:"";
 position:absolute;
+
 inset:0;
 
 background:
 linear-gradient(
 90deg,
-rgba(5,8,20,.85),
-rgba(5,8,20,.25)
+rgba(5,8,20,.88),
+rgba(5,8,20,.35)
 );
 
 }
 
 
-.hero-container,
-.hero-content{
+.hero-container{
 
 position:relative;
+
 z-index:2;
 
 }
 
 
-.hero-image{
+.hero-content{
 
-display:none;
+max-width:650px;
 
 }
 
 
+.hero h1{
+
+font-size:90px;
+
+line-height:1;
+
+color:white;
+
+}
 
 
+.hero h1 span{
+
+display:block;
+
+color:#f7c631;
+
+}
 
 
+.hero h2{
+
+color:white;
+
+}
 
 
+.hero p{
 
+color:#ddd;
 
+font-size:18px;
 
+line-height:1.8;
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
