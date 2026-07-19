@@ -4409,7 +4409,48 @@ section{
 }
 
 
+/* ===== NEW HERO SYSTEM ===== */
 
+.hero{
+position:relative;
+min-height:100vh;
+background:url("file_xxxx.png") center/cover no-repeat;
+display:flex;
+align-items:center;
+overflow:hidden;
+}
+
+
+.hero::before{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+90deg,
+rgba(5,8,20,.85),
+rgba(5,8,20,.25)
+);
+
+}
+
+
+.hero-container,
+.hero-content{
+
+position:relative;
+z-index:2;
+
+}
+
+
+.hero-image{
+
+display:none;
+
+}
 
 
 
