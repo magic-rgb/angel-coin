@@ -382,10 +382,19 @@ section{
 
     border:1px solid rgba(232,181,47,.35);
 
-    border-radius:26px;
+clip-path:polygon(
+28px 0,
+calc(100% - 28px) 0,
+100% 28px,
+100% calc(100% - 28px),
+calc(100% - 28px) 100%,
+28px 100%,
+0 calc(100% - 28px),
+0 28px
+);
 
-    overflow:hidden;
-
+overflow:hidden;
+  
     backdrop-filter:blur(18px);
 
     box-shadow:
@@ -449,6 +458,127 @@ section{
     border:1px solid rgba(255,255,255,.03);
 
     pointer-events:none;
+
+}
+
+
+.header-inner{
+
+    position:absolute;
+
+    inset:10px;
+
+    pointer-events:none;
+
+    clip-path:polygon(
+22px 0,
+calc(100% - 22px) 0,
+100% 22px,
+100% calc(100% - 22px),
+calc(100% - 22px) 100%,
+22px 100%,
+0 calc(100% - 22px),
+0 22px
+);
+
+    border:1px solid rgba(255,215,106,.10);
+
+}
+
+.corner{
+
+    transition:.35s;
+
+}
+
+.header-frame:hover .corner{
+
+    border-color:#FFD76A;
+
+    box-shadow:
+
+        0 0 12px rgba(255,215,106,.6);
+
+}
+
+
+
+
+.header-frame:hover{
+
+    border-color:rgba(255,215,106,.55);
+
+    box-shadow:
+
+        0 0 45px rgba(232,181,47,.22),
+
+        0 12px 45px rgba(0,0,0,.45);
+
+}
+
+/*==================================================
+            HEADER DECORATION
+==================================================*/
+
+.header-decoration{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/* TOP LIGHT */
+
+.header-decoration::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-60px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:320px;
+
+    height:140px;
+
+    background:radial-gradient(circle,
+    rgba(255,215,106,.22),
+    transparent 70%);
+
+    filter:blur(15px);
+
+}
+
+/* BOTTOM LIGHT */
+
+.header-decoration::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:420px;
+
+    height:180px;
+
+    background:radial-gradient(circle,
+    rgba(232,181,47,.10),
+    transparent 75%);
 
 }
 
@@ -585,6 +715,74 @@ section{
 
 }
 
+
+.brand-logo{
+
+    position:relative;
+
+}
+
+.brand-logo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(232,181,47,.25);
+
+    animation:logoGlow 4s linear infinite;
+
+}
+
+
+.brand-logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:6px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        inset 0 0 12px rgba(255,215,106,.18);
+
+}
+
+@keyframes logoGlow{
+
+0%{
+
+transform:rotate(0deg);
+
+opacity:.4;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+opacity:.4;
+
+}
+
+}
+
 .brand-content{
 
     display:flex;
@@ -601,37 +799,49 @@ section{
 
     font-size:34px;
 
-    line-height:1;
-
     font-weight:900;
+
+    line-height:1;
 
     letter-spacing:2px;
 
-    color:#ffffff;
-
     text-transform:uppercase;
 
+    color:#ffffff;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.08);
+
 }
+
 
 .brand-content h2 span{
 
     color:var(--gold);
 
+    text-shadow:
+
+        0 0 15px rgba(232,181,47,.55);
+
 }
+
 
 .brand-content p{
 
-    margin-top:8px;
+    margin-top:6px;
 
-    font-size:11px;
+    font-size:10px;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
 
-    color:#bca76a;
+    color:#B79A54;
 
     text-transform:uppercase;
 
 }
+
+
 
 /*==================================================
                  PREMIUM NAVIGATION
@@ -708,6 +918,32 @@ section{
     background:rgba(255,255,255,.04);
 
 }
+
+
+.header-nav a::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.03);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.header-nav a:hover::before{
+
+    opacity:1;
+
+}
+
 
 .header-nav a.active{
 
@@ -808,6 +1044,17 @@ section{
 
     border-radius:18px;
 
+clip-path:polygon(
+12px 0,
+100% 0,
+100% calc(100% - 12px),
+calc(100% - 12px) 100%,
+0 100%,
+0 12px
+);
+
+letter-spacing:1.5px;
+  
     overflow:hidden;
 
     transition:.35s ease;
@@ -869,6 +1116,14 @@ section{
 
 }
 
+.buy-token-btn:active{
+
+    transform:scale(.98);
+
+}
+
+
+
 .buy-token-btn span{
 
     position:relative;
@@ -886,7 +1141,6 @@ section{
     font-size:16px;
 
 }
-
 
 
 
