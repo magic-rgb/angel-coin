@@ -19,121 +19,149 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <body>
 
 
-<header class="header">
+<!--================ HEADER ================-->
 
-    <div class="header-bg"></div>
+<header class="header" id="header">
 
-    <div class="container nav">
+    <div class="container">
 
-        <a href="#home" class="logo">
+        <nav class="nav">
 
-            <img src="logo.png" alt="Angel Coin">
+            <!-- Logo -->
 
-            <div class="logo-text">
+            <a href="#home" class="logo">
 
-                <h2>ANGEL COIN</h2>
+                <img
+                    src="logo.png"
+                    alt="Angel Coin Logo"
+                    loading="eager"
+                    decoding="async"
+                >
 
-                <span>Power • Glory • Eternity</span>
+                <span>
+                    ANGEL <strong>COIN</strong>
+                </span>
 
-            </div>
+            </a>
 
-        </a>
+            <!-- Navigation -->
 
-        <nav class="nav-menu">
+            <ul class="nav-menu">
 
-            <ul class="nav-list">
+                <li>
+                    <a href="#home" class="active">Home</a>
+                </li>
 
-                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-                <li><a class="nav-link" href="#about">About</a></li>
+                <li>
+                    <a href="#features">Features</a>
+                </li>
 
-                <li><a class="nav-link" href="#features">Features</a></li>
+                <li>
+                    <a href="#roadmap">Roadmap</a>
+                </li>
 
-                <li><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+                <li>
+                    <a href="#team">Team</a>
+                </li>
 
-                <li><a class="nav-link" href="#roadmap">Roadmap</a></li>
+                <li>
+                    <a href="#tokenomics">Tokenomics</a>
+                </li>
 
-                <li><a class="nav-link" href="#team">Team</a></li>
-
-                <li><a class="nav-link" href="#community">Community</a></li>
+                <li>
+                    <a href="#community">Community</a>
+                </li>
 
             </ul>
 
-        </nav>
+            <!-- CTA -->
 
-        <div class="nav-right">
+            <a href="#" class="header-btn">
 
-            <a href="#" class="buy-btn">
-
-                BUY TOKEN
+                Buy Token
 
                 <i class="fa-solid fa-arrow-right"></i>
 
             </a>
 
-            <div class="nav-toggle">
+            <!-- Mobile Button -->
 
-                <span></span>
-                <span></span>
-                <span></span>
+            <button
+                class="nav-toggle"
+                aria-label="Open Menu"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+                type="button"
+            >
 
-            </div>
+                <i class="fa-solid fa-bars"></i>
 
-        </div>
+            </button>
+
+        </nav>
 
     </div>
 
 </header>
-
     
-<!-- ================= HERO ================= -->
+
+<!--================ HERO ================-->
 
 <section class="hero" id="home">
 
     <div class="hero-overlay"></div>
 
-    <div class="container hero-grid">
-
-        <!-- Left Content -->
+    <div class="container hero-container">
 
         <div class="hero-content">
 
-            <div class="hero-badge">
+            <span class="hero-badge">
                 <i class="fa-solid fa-star"></i>
                 NEXT GENERATION CRYPTOCURRENCY
-            </div>
+            </span>
 
-            
 
-            <h2>
-                A NEW ERA OF DIGITAL FINANCE
-            </h2>
+            <h1>
+                A NEW ERA OF
+                <span>DIGITAL FINANCE</span>
+            </h1>
+
 
             <p>
                 Angel Coin is a decentralized cryptocurrency designed to
                 connect innovation, security and community into one powerful
-                ecosystem. Built for long-term growth and worldwide adoption.
+                blockchain ecosystem.
             </p>
 
-            <!-- Buttons -->
 
             <div class="hero-buttons">
 
                 <a href="#" class="gold-button">
-                    BUY TOKEN
+
+                    Buy Token
+
                     <i class="fa-solid fa-rocket"></i>
+
                 </a>
 
+
                 <a href="#" class="outline-button">
-                    WHITEPAPER
+
+                    Whitepaper
+
                     <i class="fa-regular fa-file-lines"></i>
+
                 </a>
 
             </div>
 
-            <!-- Features -->
 
             <div class="hero-features">
+
 
                 <div class="feature-card">
 
@@ -144,12 +172,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                         <h3>Secure</h3>
 
                         <p>
-                            Advanced blockchain protection and decentralized security.
+                            Advanced blockchain protection.
                         </p>
 
                     </div>
 
                 </div>
+
+
 
                 <div class="feature-card">
 
@@ -160,12 +190,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                         <h3>Community</h3>
 
                         <p>
-                            Thousands of supporters building the future together.
+                            Built by a global community.
                         </p>
 
                     </div>
 
                 </div>
+
+
 
                 <div class="feature-card">
 
@@ -176,67 +208,78 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                         <h3>Fast</h3>
 
                         <p>
-                            High-speed transactions with low network fees.
+                            Low fees and fast transactions.
                         </p>
 
                     </div>
 
                 </div>
 
-                <div class="feature-card">
-
-                    <i class="fa-solid fa-earth-americas"></i>
-
-                    <div>
-
-                        <h3>Global</h3>
-
-                        <p>
-                            Accessible worldwide without borders.
-                        </p>
-
-                    </div>
-
-                </div>
 
             </div>
 
-            <!-- Trust -->
+
 
             <div class="hero-trust">
 
-                <div class="trust-item">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                    <span>100% Secure</span>
-
-                </div>
 
                 <div class="trust-item">
 
                     <i class="fa-solid fa-lock"></i>
 
-                    <span>Smart Contract</span>
+                    <span>
+                        Smart Contract
+                    </span>
 
                 </div>
+
 
                 <div class="trust-item">
 
-                    <i class="fa-solid fa-bolt"></i>
+                    <i class="fa-solid fa-shield"></i>
 
-                    <span>Fast Network</span>
+                    <span>
+                        Secure Network
+                    </span>
 
                 </div>
 
+
+                <div class="trust-item">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <span>
+                        Global Access
+                    </span>
+
+                </div>
+
+
             </div>
+
 
         </div>
 
-        </div> <!-- hero-content -->
-    </div> <!-- hero-grid -->
 
-    <!-- Scroll -->
+
+        <!-- Hero Image -->
+
+        <div class="hero-image">
+
+            <div class="hero-glow"></div>
+
+            <img 
+            src="logo.png"
+            alt="Angel Coin"
+            loading="eager"
+            decoding="async">
+
+        </div>
+
+
+    </div>
+
 
     <div class="hero-scroll">
 
@@ -248,8 +291,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     </div>
 
-</section>
 
+</section>
 
 <!-- ================= STATS ================= -->
 
