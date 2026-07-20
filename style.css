@@ -359,7 +359,7 @@ section{
 
     margin:auto;
 
-    height:110px;
+    height:90px;
 
     display:flex;
 
@@ -367,7 +367,7 @@ section{
 
     justify-content:space-between;
 
-    padding:0 28px;
+    padding:0 25px;
 
     background:
 
@@ -380,7 +380,7 @@ section{
         #101723,
         #070B14);
 
-    border:1px solid rgba(232,181,47,.35);
+    border:22px solid rgba(232,181,47,.35);
 
 clip-path:polygon(
 28px 0,
@@ -693,8 +693,9 @@ calc(100% - 22px) 100%,
 
 .brand-logo img{
 
-    width:100%;
-    height:100%;
+    width:1
+      width:52%;
+    height:52%;
 
     object-fit:contain;
 
@@ -886,6 +887,29 @@ opacity:.4;
 
 }
 
+/* =================================
+   HEADER NAV PREMIUM BOX STYLE
+================================= */
+
+
+.header-nav{
+
+    display:flex;
+    align-items:center;
+
+}
+
+
+.header-nav ul{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
 .header-nav a{
 
     display:flex;
@@ -894,25 +918,85 @@ opacity:.4;
 
     justify-content:center;
 
-    height:52px;
 
-    padding:0 22px;
+    height:38px;
 
-    border-radius:14px;
+    min-width:72px;
 
-    text-decoration:none;
 
-    color:#d9dde8;
+    padding:0 14px;
 
-    font-size:15px;
+
+    color:#d5b15a;
+
+
+    font-size:12px;
 
     font-weight:600;
 
     letter-spacing:.5px;
 
+
+    text-decoration:none;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.05),
+        rgba(0,0,0,.35)
+    );
+
+
+    border:
+
+    1px solid rgba(212,170,70,.38);
+
+
+    border-radius:10px;
+
+
+    box-shadow:
+
+    inset 0 0 12px rgba(212,170,70,.08);
+
+
     transition:.35s ease;
 
+
 }
+
+
+
+.header-nav a:hover,
+.header-nav a.active{
+
+
+    color:#fff;
+
+
+    border-color:#d9b45b;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(212,170,70,.22),
+        rgba(0,0,0,.45)
+    );
+
+
+    box-shadow:
+
+    0 0 14px rgba(212,170,70,.25),
+
+    inset 0 0 15px rgba(212,170,70,.12);
+
+
+}
+
 
 .header-nav a:hover{
 
