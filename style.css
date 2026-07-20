@@ -267,59 +267,6 @@ section{
 
 
 
-<!--================ HEADER ================-->
-
-<header class="header" id="header">
-
-    <div class="nav container">
-
-        <a href="#" class="logo">
-
-            <img src="assets/images/logo.png" alt="Angel Coin">
-
-            <div class="logo-text">
-
-                <h2>ANGEL COIN</h2>
-
-                <span>Power • Glory • Eternity</span>
-
-            </div>
-
-        </a>
-
-        <nav class="nav-menu">
-
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
-
-        </nav>
-
-        <a href="#buy" class="buy-btn">
-
-            BUY TOKEN
-
-            <i class="fa-solid fa-rocket"></i>
-
-        </a>
-
-        <div class="menu-toggle">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
 /*==================================================
                 PREMIUM HEADER
 ==================================================*/
