@@ -266,47 +266,265 @@ background:var(--gold-light);
 
 
 /*==================================================
-            PREMIUM BACKGROUND
+        ANGEL COIN PREMIUM BACKGROUND V1
 ==================================================*/
+
+/*==============================
+        DESIGN SYSTEM
+==============================*/
+
+:root{
+
+--bg-1:#020202;
+--bg-2:#070707;
+--bg-3:#101010;
+
+--gold:#FFD66B;
+--gold-light:#FFE9A3;
+--gold-dark:#B88924;
+
+--white:#ffffff;
+--text:#D8D8D8;
+
+--transition:.45s cubic-bezier(.16,1,.3,1);
+
+}
+
+
+/*==============================
+            BODY
+==============================*/
+
+html{
+
+scroll-behavior:smooth;
+
+}
 
 body{
 
+margin:0;
+padding:0;
+
 background:
-radial-gradient(circle at top left,
-rgba(255,214,107,.08),
-transparent 35%),
-
-radial-gradient(circle at bottom right,
-rgba(255,214,107,.05),
-transparent 40%),
-
 linear-gradient(
 180deg,
-#060606 0%,
-#090909 30%,
-#050505 100%);
+var(--bg-1) 0%,
+var(--bg-2) 45%,
+var(--bg-3) 100%
+);
+
+color:var(--white);
+
+font-family:"Inter",sans-serif;
 
 overflow-x:hidden;
 
 position:relative;
 
+-webkit-font-smoothing:antialiased;
+
 }
 
-.page-background{
+
+/*==============================
+        GLOBAL BACKGROUND
+==============================*/
+
+.bg-system{
 
 position:fixed;
 
 inset:0;
 
-z-index:-20;
+overflow:hidden;
 
 pointer-events:none;
 
-overflow:hidden;
+z-index:-100;
 
 }
 
-.bg-gradient{
+
+/*==============================
+            STARS
+==============================*/
+
+.bg-stars{
+
+position:absolute;
+
+inset:-30%;
+
+background-image:
+
+radial-gradient(circle,#ffffff 1px,transparent 1.8px),
+
+radial-gradient(circle,#FFD66B .8px,transparent 1.6px),
+
+radial-gradient(circle,#ffffff .7px,transparent 1.4px),
+
+radial-gradient(circle,#FFD66B .9px,transparent 1.8px),
+
+radial-gradient(circle,#ffffff 1.1px,transparent 2px);
+
+background-size:
+
+140px 140px,
+
+220px 220px,
+
+300px 300px,
+
+420px 420px,
+
+560px 560px;
+
+background-position:
+
+0 0,
+
+80px 60px,
+
+160px 120px,
+
+240px 180px,
+
+320px 260px;
+
+opacity:.45;
+
+animation:
+
+starsMove 180s linear infinite;
+
+}
+
+
+/*==============================
+        GOLD GLOW LEFT
+==============================*/
+
+.glow-left{
+
+position:absolute;
+
+width:650px;
+
+height:650px;
+
+left:-260px;
+
+top:-120px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,214,107,.30),
+
+transparent 72%
+
+);
+
+filter:blur(140px);
+
+animation:
+
+glowLeft 12s ease-in-out infinite;
+
+}
+
+
+/*==============================
+        GOLD GLOW RIGHT
+==============================*/
+
+.glow-right{
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+right:-280px;
+
+bottom:-180px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,214,107,.26),
+
+transparent 72%
+
+);
+
+filter:blur(160px);
+
+animation:
+
+glowRight 15s ease-in-out infinite;
+
+}
+
+
+/*==============================
+        CENTER HALO
+==============================*/
+
+.glow-center{
+
+position:absolute;
+
+left:50%;
+
+top:45%;
+
+transform:translate(-50%,-50%);
+
+width:900px;
+
+height:900px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,214,107,.12),
+
+transparent 75%
+
+);
+
+filter:blur(180px);
+
+animation:
+
+haloPulse 10s ease-in-out infinite;
+
+}
+
+
+/*==============================
+        VIGNETTE
+==============================*/
+
+.bg-vignette{
 
 position:absolute;
 
@@ -314,24 +532,118 @@ inset:0;
 
 background:
 
-radial-gradient(circle at 20% 25%,
-rgba(255,214,107,.12),
-transparent 30%),
+radial-gradient(
 
-radial-gradient(circle at 80% 10%,
-rgba(255,214,107,.07),
-transparent 30%),
+circle,
 
-radial-gradient(circle at 60% 85%,
-rgba(255,214,107,.05),
-transparent 35%);
+transparent 45%,
 
-filter:blur(30px);
+rgba(0,0,0,.55) 100%
 
-animation:bgMove 18s linear infinite alternate;
+);
 
 }
 
+
+/*==============================
+        ANIMATIONS
+==============================*/
+
+@keyframes starsMove{
+
+from{
+
+transform:
+translateY(0);
+
+}
+
+to{
+
+transform:
+translateY(-900px);
+
+}
+
+}
+
+
+
+@keyframes glowLeft{
+
+0%,100%{
+
+transform:
+translate(0,0) scale(1);
+
+}
+
+50%{
+
+transform:
+translate(60px,-40px) scale(1.15);
+
+}
+
+}
+
+
+
+@keyframes glowRight{
+
+0%,100%{
+
+transform:
+translate(0,0) scale(1);
+
+}
+
+50%{
+
+transform:
+translate(-70px,60px) scale(1.18);
+
+}
+
+}
+
+
+
+@keyframes haloPulse{
+
+0%,100%{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+opacity:.18;
+
+}
+
+50%{
+
+transform:
+translate(-50%,-50%)
+scale(1.22);
+
+opacity:.34;
+
+}
+
+}
+
+
+
+/*==================================================
+      PREMIUM BACKGROUND PART 2
+      GRID + AURORA + LIGHT RAYS + DUST
+==================================================*/
+
+
+/*=================================
+        CYBER GRID
+=================================*/
 
 .bg-grid{
 
@@ -339,49 +651,412 @@ position:absolute;
 
 inset:0;
 
+opacity:.18;
+
 background-image:
 
-linear-gradient(
+linear-gradient(rgba(255,214,107,.08) 1px,transparent 1px),
 
-rgba(255,255,255,.035) 1px,
+linear-gradient(90deg,rgba(255,214,107,.08) 1px,transparent 1px);
 
-transparent 1px
-
-),
-
-linear-gradient(
-
-90deg,
-
-rgba(255,255,255,.035) 1px,
-
-transparent 1px
-
-);
-
-background-size:70px 70px;
-
-opacity:.32;
+background-size:90px 90px;
 
 mask-image:
 
-linear-gradient(
+radial-gradient(circle,#fff 35%,transparent 90%);
 
-180deg,
-
-transparent,
-
-black 20%,
-
-black 80%,
-
-transparent
-
-);
+animation:gridMove 35s linear infinite;
 
 }
 
-.bg-stars{
+
+
+/*=================================
+            AURORA
+=================================*/
+
+.bg-aurora{
+
+position:absolute;
+
+inset:-30%;
+
+background:
+
+linear-gradient(
+120deg,
+
+transparent 0%,
+
+rgba(255,214,107,.05) 20%,
+
+transparent 40%,
+
+rgba(255,255,255,.03) 55%,
+
+transparent 75%,
+
+rgba(255,214,107,.06) 100%
+
+);
+
+filter:blur(80px);
+
+mix-blend-mode:screen;
+
+animation:
+
+auroraMove 24s ease-in-out infinite alternate;
+
+}
+
+
+
+/*=================================
+        LIGHT RAYS
+=================================*/
+
+.light-rays{
+
+position:absolute;
+
+inset:-40%;
+
+background:
+
+repeating-linear-gradient(
+
+110deg,
+
+transparent 0px,
+
+transparent 140px,
+
+rgba(255,214,107,.025) 145px,
+
+transparent 160px
+
+);
+
+opacity:.45;
+
+filter:blur(1px);
+
+animation:
+
+raysMove 40s linear infinite;
+
+}
+
+
+
+/*=================================
+        FLOATING DUST
+=================================*/
+
+.bg-dust{
+
+position:absolute;
+
+inset:-20%;
+
+background-image:
+
+radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 2px),
+
+radial-gradient(circle,rgba(255,214,107,.6) .8px,transparent 2px),
+
+radial-gradient(circle,rgba(255,255,255,.5) .6px,transparent 1.8px);
+
+background-size:
+
+240px 240px,
+
+320px 320px,
+
+420px 420px;
+
+opacity:.22;
+
+animation:
+
+dustMove 70s linear infinite;
+
+}
+
+
+
+/*=================================
+        GOLD HAZE
+=================================*/
+
+.gold-haze{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:1400px;
+
+height:900px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+ellipse,
+
+rgba(255,214,107,.05),
+
+transparent 70%
+
+);
+
+filter:blur(120px);
+
+animation:
+
+goldBreath 14s ease-in-out infinite;
+
+}
+
+
+
+/*=================================
+        ANIMATIONS
+=================================*/
+
+@keyframes gridMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(90px);
+
+}
+
+}
+
+
+
+@keyframes auroraMove{
+
+0%{
+
+transform:
+
+rotate(0deg)
+
+scale(1);
+
+}
+
+50%{
+
+transform:
+
+rotate(5deg)
+
+scale(1.08);
+
+}
+
+100%{
+
+transform:
+
+rotate(-5deg)
+
+scale(1.15);
+
+}
+
+}
+
+
+
+@keyframes raysMove{
+
+from{
+
+transform:
+
+translateX(0);
+
+}
+
+to{
+
+transform:
+
+translateX(-220px);
+
+}
+
+}
+
+
+
+@keyframes dustMove{
+
+from{
+
+transform:
+
+translateY(0);
+
+}
+
+to{
+
+transform:
+
+translateY(-600px);
+
+}
+
+}
+
+
+
+@keyframes goldBreath{
+
+0%,100%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1);
+
+opacity:.10;
+
+}
+
+50%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.12);
+
+opacity:.20;
+
+}
+
+}
+
+
+
+/*==================================================
+      PREMIUM BACKGROUND PART 3
+      ENERGY + NEBULA + ORBS
+==================================================*/
+
+
+/*==============================
+        NEBULA
+==============================*/
+
+.bg-nebula{
+
+position:absolute;
+
+inset:-25%;
+
+background:
+
+radial-gradient(circle at 20% 30%,rgba(255,214,107,.08),transparent 28%),
+
+radial-gradient(circle at 75% 20%,rgba(255,255,255,.04),transparent 24%),
+
+radial-gradient(circle at 70% 80%,rgba(255,214,107,.06),transparent 30%),
+
+radial-gradient(circle at 30% 75%,rgba(255,255,255,.03),transparent 26%);
+
+filter:blur(120px);
+
+mix-blend-mode:screen;
+
+animation:nebulaMove 40s ease-in-out infinite alternate;
+
+}
+
+
+/*==============================
+        ENERGY ORB
+==============================*/
+
+.energy-orb{
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,214,107,.35),
+
+transparent 70%);
+
+filter:blur(35px);
+
+animation:orbFloat 16s ease-in-out infinite;
+
+}
+
+.energy-orb.one{
+
+left:8%;
+
+top:18%;
+
+}
+
+.energy-orb.two{
+
+right:12%;
+
+top:55%;
+
+animation-delay:5s;
+
+}
+
+.energy-orb.three{
+
+left:42%;
+
+bottom:10%;
+
+animation-delay:9s;
+
+}
+
+
+/*==============================
+      ENERGY LINES
+==============================*/
+
+.energy-lines{
 
 position:absolute;
 
@@ -389,87 +1064,635 @@ inset:0;
 
 background-image:
 
-radial-gradient(circle,#fff 1px,transparent 1px),
+linear-gradient(
 
-radial-gradient(circle,#FFD66B .8px,transparent .8px),
+transparent 97%,
 
-radial-gradient(circle,#fff 1px,transparent 1px);
+rgba(255,214,107,.05) 100%
+
+);
+
+background-size:100% 120px;
+
+opacity:.25;
+
+animation:energyLines 14s linear infinite;
+
+}
+
+
+/*==============================
+        FLOATING ENERGY
+==============================*/
+
+.energy-particles{
+
+position:absolute;
+
+inset:-15%;
+
+background-image:
+
+radial-gradient(circle,rgba(255,214,107,.9) 1px,transparent 2px),
+
+radial-gradient(circle,#ffffff .8px,transparent 2px),
+
+radial-gradient(circle,rgba(255,214,107,.7) .7px,transparent 2px);
 
 background-size:
 
-180px 180px,
+280px 280px,
 
-250px 250px,
+360px 360px,
 
-320px 320px;
-
-background-position:
-
-0 0,
-
-80px 50px,
-
-150px 90px;
+460px 460px;
 
 opacity:.35;
 
-animation:starsMove 140s linear infinite;
+animation:particlesFloat 90s linear infinite;
 
 }
 
 
-.bg-noise{
+/*==============================
+        ANIMATIONS
+==============================*/
+
+@keyframes nebulaMove{
+
+0%{
+
+transform:
+
+translate(0,0)
+
+scale(1);
+
+}
+
+50%{
+
+transform:
+
+translate(40px,-20px)
+
+scale(1.08);
+
+}
+
+100%{
+
+transform:
+
+translate(-40px,30px)
+
+scale(1.15);
+
+}
+
+}
+
+
+
+@keyframes orbFloat{
+
+0%,100%{
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+50%{
+
+transform:
+
+translateY(-50px)
+
+scale(1.15);
+
+}
+
+}
+
+
+
+@keyframes energyLines{
+
+from{
+
+background-position:0 0;
+
+}
+
+to{
+
+background-position:0 120px;
+
+}
+
+}
+
+
+
+@keyframes particlesFloat{
+
+from{
+
+transform:
+
+translateY(0);
+
+}
+
+to{
+
+transform:
+
+translateY(-900px);
+
+}
+
+}
+
+
+/*==================================================
+        PREMIUM BACKGROUND PART 4
+      PERFORMANCE + CINEMATIC EFFECTS
+==================================================*/
+
+
+/*==============================
+        GPU OPTIMIZATION
+==============================*/
+
+.bg-system,
+.bg-stars,
+.bg-grid,
+.bg-aurora,
+.bg-nebula,
+.bg-dust,
+.energy-lines,
+.energy-particles,
+.glow-left,
+.glow-right,
+.glow-center,
+.gold-haze,
+.energy-orb{
+
+will-change:transform,opacity;
+
+transform:translateZ(0);
+
+backface-visibility:hidden;
+
+}
+
+
+/*==============================
+        CINEMATIC VIGNETTE
+==============================*/
+
+.bg-vignette{
 
 position:absolute;
 
-inset:-100px;
+inset:0;
 
-background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+background:
 
-opacity:.05;
+radial-gradient(
 
-mix-blend-mode:overlay;
+circle,
 
-animation:noiseMove 1.3s steps(4) infinite;
+transparent 45%,
+
+rgba(0,0,0,.20) 65%,
+
+rgba(0,0,0,.45) 82%,
+
+rgba(0,0,0,.78) 100%
+
+);
+
+mix-blend-mode:multiply;
 
 }
 
 
-.bg-glow{
+/*==============================
+        GOLD SHIMMER
+==============================*/
+
+.bg-shimmer{
 
 position:absolute;
 
-width:550px;
+inset:-50%;
 
-height:550px;
+background:
 
-border-radius:50%;
+linear-gradient(
 
-filter:blur(140px);
+120deg,
 
-opacity:.20;
+transparent 0%,
+
+rgba(255,214,107,.02) 25%,
+
+rgba(255,214,107,.07) 50%,
+
+rgba(255,214,107,.02) 75%,
+
+transparent 100%
+
+);
+
+filter:blur(70px);
+
+animation:shimmerMove 24s linear infinite;
+
+opacity:.8;
+
+}
+
+
+/*==============================
+        ATMOSPHERE
+==============================*/
+
+.bg-atmosphere{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(
+
+circle at 50% 0%,
+
+rgba(255,214,107,.05),
+
+transparent 60%
+
+),
+
+radial-gradient(
+
+circle at 50% 100%,
+
+rgba(255,214,107,.04),
+
+transparent 65%
+
+);
+
+mix-blend-mode:screen;
 
 }
 
-.glow-left{
 
-left:-220px;
+/*==============================
+        EDGE LIGHT
+==============================*/
 
-top:120px;
+.edge-light{
 
-background:#FFD66B;
+position:absolute;
+
+inset:0;
+
+border:
+
+1px solid rgba(255,214,107,.04);
+
+box-shadow:
+
+inset 0 0 120px rgba(255,214,107,.05);
+
+pointer-events:none;
 
 }
 
-.glow-right{
 
-right:-200px;
+/*==============================
+        ANIMATIONS
+==============================*/
 
-bottom:-120px;
+@keyframes shimmerMove{
 
-background:#FFD66B;
+0%{
+
+transform:
+
+translateX(-35%)
+
+rotate(0deg);
 
 }
+
+100%{
+
+transform:
+
+translateX(35%)
+
+rotate(3deg);
+
+}
+
+}
+
+
+/*==============================
+        4K MONITORS
+==============================*/
+
+@media(min-width:1800px){
+
+.bg-stars{
+
+opacity:.60;
+
+}
+
+.glow-center{
+
+width:1200px;
+
+height:1200px;
+
+}
+
+.gold-haze{
+
+width:1800px;
+
+height:1200px;
+
+}
+
+}
+
+
+/*==============================
+        TABLET
+==============================*/
+
+@media(max-width:1024px){
+
+.bg-grid{
+
+opacity:.12;
+
+}
+
+.light-rays{
+
+opacity:.20
+
+}
+
+.gold-haze{
+
+opacity:.12;
+
+}
+
+}
+
+
+/*==============================
+        MOBILE
+==============================*/
+
+@media(max-width:768px){
+
+.bg-grid{
+
+display:none;
+
+}
+
+.light-rays{
+
+display:none;
+
+}
+
+.energy-lines{
+
+display:none;
+
+}
+
+.energy-orb{
+
+transform:scale(.6);
+
+}
+
+.bg-nebula{
+
+opacity:.55;
+
+}
+
+.bg-stars{
+
+opacity:.35;
+
+}
+
+}
+
+
+/*==============================
+    REDUCED MOTION
+==============================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.bg-stars,
+.bg-grid,
+.bg-aurora,
+.bg-nebula,
+.bg-dust,
+.energy-particles,
+.glow-left,
+.glow-right,
+.glow-center,
+.gold-haze,
+.bg-shimmer{
+
+animation:none!important;
+
+}
+
+}
+  
+
+/*==================================================
+      PREMIUM BACKGROUND PART 5
+      FINAL PRODUCTION POLISH
+==================================================*/
+
+/*==============================
+      FLOATING GOLD SPARKS
+==============================*/
+
+.bg-sparks{
+
+position:absolute;
+
+inset:-15%;
+
+background-image:
+
+radial-gradient(circle,rgba(255,214,107,.95) .8px,transparent 2px),
+
+radial-gradient(circle,#ffffff .6px,transparent 2px);
+
+background-size:
+
+420px 420px,
+
+620px 620px;
+
+opacity:.18;
+
+animation:
+
+sparksFloat 120s linear infinite;
+
+}
+
+
+/*==============================
+      GOLD RIM LIGHT
+==============================*/
+
+.gold-rim{
+
+position:absolute;
+
+inset:0;
+
+box-shadow:
+
+inset 0 0 180px rgba(255,214,107,.03),
+
+inset 0 0 280px rgba(255,214,107,.02);
+
+pointer-events:none;
+
+}
+
+
+/*==============================
+      SOFT FOG
+==============================*/
+
+.bg-fog{
+
+position:absolute;
+
+left:-15%;
+
+right:-15%;
+
+bottom:-10%;
+
+height:45%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+transparent,
+
+rgba(255,255,255,.02),
+
+rgba(255,214,107,.03),
+
+rgba(0,0,0,.12)
+
+);
+
+filter:blur(45px);
+
+opacity:.65;
+
+}
+
+
+/*==============================
+      GOLD TOP LIGHT
+==============================*/
+
+.top-light{
+
+position:absolute;
+
+top:0;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:1000px;
+
+height:260px;
+
+background:
+
+radial-gradient(
+
+ellipse,
+
+rgba(255,214,107,.08),
+
+transparent 70%
+
+);
+
+filter:blur(80px);
+
+}
+
+
+/*==============================
+      FINAL ANIMATION
+==============================*/
+
+@keyframes sparksFloat{
+
+from{
+
+transform:
+
+translateY(0);
+
+}
+
+to{
+
+transform:
+
+translateY(-1200px);
+
+}
+
+}
+
+
 
 /*==================================================
             FLOATING PARTICLES
@@ -2070,7 +3293,54 @@ transform:translateY(-50%) scale(1.2);
 
 }
 
+.hero{
+    position:relative;
+    overflow:hidden;
+}
 
+.hero-light{
+    position:absolute;
+    width:900px;
+    height:900px;
+    left:50%;
+    top:40%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+        rgba(255,214,107,.16),
+        transparent 70%);
+    filter:blur(120px);
+    animation:heroPulse 8s ease-in-out infinite;
+}
+
+.hero-ring{
+    position:absolute;
+    width:620px;
+    height:620px;
+    left:50%;
+    top:42%;
+    transform:translate(-50%,-50%);
+    border:1px solid rgba(255,214,107,.12);
+    border-radius:50%;
+    animation:ringRotate 35s linear infinite;
+}
+
+@keyframes heroPulse{
+    0%,100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    50%{
+        transform:translate(-50%,-50%) scale(1.12);
+    }
+}
+
+@keyframes ringRotate{
+    from{
+        transform:translate(-50%,-50%) rotate(0);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
 
 /*==================================================
                     ABOUT SECTION
@@ -2658,6 +3928,23 @@ opacity:1;
 }
 }
 
+
+.about{
+    position:relative;
+}
+
+.about-light{
+    position:absolute;
+    right:-200px;
+    top:0;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(255,214,107,.14),
+        transparent 72%);
+    filter:blur(120px);
+}
 
 /*==================================================
             ABOUT CINEMATIC VIDEO
@@ -4578,6 +5865,39 @@ transform:rotate(360deg);
 
 }
 
+.tokenomics::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,214,107,.10),
+
+transparent 72%);
+
+filter:blur(90px);
+
+pointer-events:none;
+
+}
+
+
 
 /*==================================================
                     ROADMAP
@@ -4962,6 +6282,33 @@ box-shadow:
 }
 
 }
+
+.road-line{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+transparent,
+
+#FFD66B,
+
+#FFF2C5,
+
+#FFD66B,
+
+transparent
+
+);
+
+box-shadow:
+
+0 0 35px rgba(255,214,107,.5);
+
+}
+
 
 
 /*==================================================
@@ -5987,6 +7334,252 @@ color:#777;
 font-size:14px;
 
 }
+
+.footer::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+transform:translateX(-50%);
+
+width:1000px;
+
+height:250px;
+
+background:
+
+radial-gradient(
+
+ellipse,
+
+rgba(255,214,107,.10),
+
+transparent 70%
+
+);
+
+filter:blur(80px);
+
+pointer-events:none;
+
+}
+
+
+.about-feature-card,
+.token-card,
+.community-card,
+.road-card,
+.join-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.about-feature-card::after,
+.token-card::after,
+.community-card::after,
+.road-card::after,
+.join-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:35%;
+
+    height:300%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:1s;
+}
+
+.about-feature-card:hover::after,
+.token-card:hover::after,
+.community-card:hover::after,
+.road-card:hover::after,
+.join-box:hover::after{
+
+    left:140%;
+}
+
+@keyframes borderGlow{
+
+0%,100%{
+
+border-color:rgba(255,214,107,.15);
+
+}
+
+50%{
+
+border-color:rgba(255,214,107,.55);
+
+}
+
+}
+
+.about-feature-card,
+.community-card,
+.token-card,
+.road-card{
+
+animation:borderGlow 6s ease-in-out infinite;
+}
+
+
+.btn-primary{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent);
+
+transition:.8s;
+
+}
+
+.btn-primary:hover::before{
+
+left:100%;
+
+}
+
+
+.coin-core img{
+
+animation:
+
+coinFloat 6s ease-in-out infinite,
+
+coinRotate 18s linear infinite;
+
+}
+
+@keyframes coinRotate{
+
+from{
+
+transform:rotateY(0deg);
+
+}
+
+to{
+
+transform:rotateY(360deg);
+
+}
+
+}
+
+
+::-webkit-scrollbar{
+
+width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#050505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+
+180deg,
+
+#FFD66B,
+
+#B88924
+
+);
+
+border-radius:20px;
+
+border:2px solid #050505;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#FFE9A3;
+
+}
+
+
+.navbar a{
+
+position:relative;
+
+}
+
+.navbar a::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:var(--gold);
+
+transition:.4s;
+
+transform:translateX(-50%);
+
+}
+
+.navbar a:hover::after{
+
+width:100%;
+
+}
+
 
 /*==================================================
               TABLET RESPONSIVE
