@@ -1835,53 +1835,6 @@ const Clipboard={
 };
 
 
-/*====================================================
-
-                LOADER
-
-====================================================*/
-
-const Loader={
-
-    element:
-
-    document.querySelector(".preloader"),
-
-    init(){
-
-        if(!this.element) return;
-
-        window.addEventListener(
-
-            "load",
-
-            ()=>{
-
-                this.hide();
-
-            }
-
-        );
-
-    },
-
-    hide(){
-
-        this.element.classList.add(
-
-        "hide"
-
-        );
-
-        setTimeout(()=>{
-
-            this.element.remove();
-
-        },900);
-
-    }
-
-};
 
 
 /*====================================================
