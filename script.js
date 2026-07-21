@@ -1845,7 +1845,7 @@ const Loader={
 
     element:
 
-    document.querySelector(".loader"),
+    document.querySelector(".preloader"),
 
     init(){
 
