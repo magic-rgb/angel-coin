@@ -6,6 +6,16 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Debounce: prevents canvas resize thrashing when mobile browsers
+  // toggle their address bar (fires rapid resize events on scroll).
+  const debounce = (fn, wait = 200) => {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
+    };
+  };
+
   /* ---------------------------------------------------------
      NAV: scroll state + mobile menu + active link
      --------------------------------------------------------- */
@@ -112,7 +122,7 @@
 
     resize();
     draw();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', debounce(resize, 250));
   })();
 
   /* ---------------------------------------------------------
@@ -374,7 +384,10 @@
   (function marquee() {
     const row = document.getElementById('trustedRow');
     if (!row) return;
-    row.innerHTML += row.innerHTML;
+    const clone = row.cloneNode(true);
+    const frag = document.createDocumentFragment();
+    Array.from(clone.children).forEach(child => frag.appendChild(child));
+    row.appendChild(frag);
   })();
 
   /* ---------------------------------------------------------
@@ -437,7 +450,7 @@
 
     resize();
     draw();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', debounce(resize, 250));
   })();
 
   /* ---------------------------------------------------------
