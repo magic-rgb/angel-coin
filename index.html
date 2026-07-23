@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Angel Coin — The Kingdom of Web3</title>
 <meta name="description" content="Angel Coin — a next-generation decentralized ecosystem built on security, transparency and innovation.">
+<meta property="og:title" content="Angel Coin">
+<meta property="og:description" content="The Kingdom of Web3">
+<meta property="og:type" content="website">
+<meta property="og:image" content="file_11x.png">
+<link rel="icon" type="image/png" href="file_11x.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,7 +34,7 @@
   <div class="nav-inner">
     <a href="#top" class="brand">
       <span class="brand-emblem">
-        <svg viewBox="0 0 48 48" class="emblem-svg"><use href="#icon-wing-emblem"/></svg>
+        <img src="file_11x.png" alt="Angel Coin" class="emblem-img" onerror="const f=document.getElementById('emblemFallback').cloneNode(true); f.removeAttribute('id'); f.style.display=''; this.replaceWith(f)">
       </span>
       <span class="brand-text">ANGEL <em>COIN</em></span>
     </a>
@@ -108,38 +113,9 @@
       <!-- SIGNATURE ELEMENT: the Angel -->
       <div class="hero-angel" data-parallax-root aria-hidden="true">
         <div class="angel-halo"></div>
-        <div class="angel-rays"></div>
         <div class="angel-godrays"></div>
-        <svg class="angel-figure" viewBox="0 0 400 520" data-parallax="8">
-          <defs>
-            <radialGradient id="haloGrad" cx="50%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="#fff6d8"/>
-              <stop offset="45%" stop-color="#ffd700"/>
-              <stop offset="100%" stop-color="#ffd70000"/>
-            </radialGradient>
-            <linearGradient id="wingGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#fff6d8"/>
-              <stop offset="55%" stop-color="#ffd700"/>
-              <stop offset="100%" stop-color="#a9720c"/>
-            </linearGradient>
-            <linearGradient id="robeGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#f4e4b8"/>
-              <stop offset="100%" stop-color="#8a6d2f"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="200" cy="120" rx="150" ry="150" fill="url(#haloGrad)" opacity="0.55"/>
-          <!-- wings -->
-          <g class="wing wing--left">
-            <path d="M195 160 C 90 120, 20 150, 10 260 C 60 230, 110 235, 150 260 C 100 270, 70 300, 60 350 C 110 330, 150 320, 180 330 Z" fill="url(#wingGrad)"/>
-          </g>
-          <g class="wing wing--right">
-            <path d="M205 160 C 310 120, 380 150, 390 260 C 340 230, 290 235, 250 260 C 300 270, 330 300, 340 350 C 290 330, 250 320, 220 330 Z" fill="url(#wingGrad)"/>
-          </g>
-          <!-- body -->
-          <path d="M200 150 C 175 150 160 175 160 200 L 150 320 C 150 380 170 430 200 460 C 230 430 250 380 250 320 L 240 200 C 240 175 225 150 200 150 Z" fill="url(#robeGrad)"/>
-          <circle cx="200" cy="120" r="34" fill="#f6e3ba"/>
-          <path d="M170 110 C 170 85 230 85 230 110 C 230 95 170 95 170 110Z" fill="#e9c76b"/>
-        </svg>
+        <img src="file_6x.png" alt="" class="angel-figure angel-figure--img" data-parallax="4">
+        <div class="angel-frame"></div>
         <div class="angel-particles" id="angelParticles"></div>
         <div class="angel-crystals" aria-hidden="true">
           <span class="crystal crystal--1"></span>
@@ -283,7 +259,8 @@
           <div class="orbit-ring orbit-ring--1"></div>
           <div class="orbit-ring orbit-ring--2"></div>
           <div class="orbit-core">
-            <svg viewBox="0 0 60 60"><use href="#icon-wing-emblem"/></svg>
+            <img src="file_11x.png" alt="" class="orbit-core-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 60 60" style="display:none"><use href="#icon-wing-emblem"/></svg>
             <b>ANGEL<br>COIN</b>
           </div>
           <div class="orbit-node orbit-node--1"><svg viewBox="0 0 24 24"><use href="#icon-wallet"/></svg><span>Wallet</span></div>
@@ -461,7 +438,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#top" class="brand">
-        <span class="brand-emblem"><svg viewBox="0 0 48 48" class="emblem-svg"><use href="#icon-wing-emblem"/></svg></span>
+        <span class="brand-emblem"><img src="file_11x.png" alt="Angel Coin" class="emblem-img" onerror="const f=document.getElementById('emblemFallback').cloneNode(true); f.removeAttribute('id'); f.style.display=''; this.replaceWith(f)"></span>
         <span class="brand-text">ANGEL <em>COIN</em></span>
       </a>
       <p>Building a decentralized future with security, transparency and community empowerment.</p>
@@ -529,6 +506,9 @@
     <p>&copy; 2024 Angel Coin. All Rights Reserved.</p>
   </div>
 </footer>
+
+<!-- Fallback emblem if logo image fails to load -->
+<svg id="emblemFallback" viewBox="0 0 48 48" class="emblem-svg" style="display:none" aria-hidden="true"><use href="#icon-wing-emblem"/></svg>
 
 <!-- ================= SVG SPRITE (icons) ================= -->
 <svg style="display:none" aria-hidden="true">
