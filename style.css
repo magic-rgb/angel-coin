@@ -251,7 +251,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 }
 
 .bg-fog{
-  position: absolute; left: 0; right: 0; bottom: 0; height: 40vh;
+  position: absolute; left: 0; right: 0; bottom: 0; height: 40vh; height: 40dvh;
   background: linear-gradient(0deg, rgba(10,6,20,0.9), transparent);
 }
 
@@ -516,6 +516,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   gap: 28px;
   align-items: center;
   min-height: 78vh;
+  min-height: 78dvh;
 }
 
 .hero-title{ margin: 0 0 20px; line-height: 0.88; }
